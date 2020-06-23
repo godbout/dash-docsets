@@ -306,4 +306,16 @@ class TikiTest extends TestCase
             Str::contains($crawler->getInnerHtml(), 'Online page')
         );
     }
+
+    /** @test */
+    public function there_is_a_set_of_manual_icons_prepared_for_this_docset()
+    {
+        $this->assertFileExists(
+            "storage/{$this->docset->code()}/icons/icon.png"
+        );
+
+        $this->assertFileExists(
+            "storage/{$this->docset->code()}/icons/icon@2x.png"
+        );
+    }
 }

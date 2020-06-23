@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 
-/** @group laravel-zero */
+/** @group@ laravel-zero */
 class LaravelZeroTest extends TestCase
 {
     public function setUp(): void
@@ -153,6 +153,18 @@ class LaravelZeroTest extends TestCase
         $this->assertStringContainsString(
             'name="//apple_ref/',
             Storage::get($this->docset->innerIndex())
+        );
+    }
+
+    /** @test */
+    public function there_is_a_set_of_manual_icons_prepared_for_this_docset()
+    {
+        $this->assertFileExists(
+            "storage/{$this->docset->code()}/icons/icon.png"
+        );
+
+        $this->assertFileExists(
+            "storage/{$this->docset->code()}/icons/icon@2x.png"
         );
     }
 }
