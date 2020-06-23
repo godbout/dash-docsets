@@ -1,20 +1,20 @@
 <?php
 
-namespace Tests\Unit\Docsets;
+namespace Tests\Unit;
 
 use Tests\TestCase;
-use App\Docsets\Jigsaw;
+use App\Docsets\Ploi;
 use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\Storage;
 
-/** @group jigsaw */
-class JigsawTest extends TestCase
+/** @group ploi */
+class PloiTest extends TestCase
 {
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->docset = new Jigsaw();
+        $this->docset = new Ploi();
         $this->builder = new DocsetBuilder($this->docset);
     }
 
@@ -22,7 +22,7 @@ class JigsawTest extends TestCase
     public function it_generates_a_table_of_contents()
     {
         $toc = $this->docset->entries(
-            $this->docset->DownloadedIndex()
+            $this->docset->downloadedIndex()
         );
 
         $this->assertNotEmpty($toc);

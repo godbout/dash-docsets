@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Docsets;
+namespace Tests\Feature;
 
 use App\Docsets\Tiki;
 use App\Services\DocsetBuilder;

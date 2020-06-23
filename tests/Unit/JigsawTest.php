@@ -1,28 +1,28 @@
 <?php
 
-namespace Tests\Unit\Docsets;
+namespace Tests\Unit;
 
 use Tests\TestCase;
-use App\Docsets\LaravelZero;
+use App\Docsets\Jigsaw;
 use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\Storage;
 
-/** @group laravel-zero */
-class LaravelZeroTest extends TestCase
+/** @group jigsaw */
+class JigsawTest extends TestCase
 {
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->docset = new LaravelZero();
+        $this->docset = new Jigsaw();
         $this->builder = new DocsetBuilder($this->docset);
     }
 
     /** @test */
-    public function it_can_generate_a_table_of_contents()
+    public function it_generates_a_table_of_contents()
     {
         $toc = $this->docset->entries(
-            $this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/docs/logging/index.html'
+            $this->docset->DownloadedIndex()
         );
 
         $this->assertNotEmpty($toc);
@@ -35,13 +35,13 @@ class LaravelZeroTest extends TestCase
 
         $this->assertStringContainsString(
             $header,
-            Storage::get($this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/docs/logging/index.html')
+            Storage::get($this->docset->downloadedIndex())
         );
 
         $this->assertStringNotContainsString(
             $header,
             $this->docset->format(
-                Storage::get($this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/docs/logging/index.html')
+                Storage::get($this->docset->downloadedIndex())
             )
         );
     }

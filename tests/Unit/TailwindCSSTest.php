@@ -1,28 +1,43 @@
 <?php
 
-namespace Tests\Unit\Docsets;
+namespace Tests\Unit;
 
 use Tests\TestCase;
-use App\Docsets\Tiki;
+use App\Docsets\TailwindCSS;
 use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\Storage;
 
-/** @group tiki */
-class TikiTest extends TestCase
+/** @group tailwindcss */
+class TailwindCSSTest extends TestCase
 {
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->docset = new Tiki();
+        $this->docset = new TailwindCSS();
         $this->builder = new DocsetBuilder($this->docset);
     }
 
     /** @test */
     public function it_can_generate_a_table_of_contents()
     {
+        // Sample entries
         $toc = $this->docset->entries(
-            $this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/PluginList-filter-control-block.html'
+            $this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/components/alerts/index.html'
+        );
+
+        $this->assertNotEmpty($toc);
+
+        // Resource entries
+        $toc = $this->docset->entries(
+            $this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/resources/index.html'
+        );
+
+        $this->assertNotEmpty($toc);
+
+        // All other entries
+        $toc = $this->docset->entries(
+            $this->docset->downloadedIndex()
         );
 
         $this->assertNotEmpty($toc);
@@ -31,7 +46,7 @@ class TikiTest extends TestCase
     /** @test */
     public function it_can_format_the_documentation_files()
     {
-        $navbar = 'nav-breadcrumb';
+        $navbar = 'id="sidebar-open"';
 
         $this->assertStringContainsString(
             $navbar,

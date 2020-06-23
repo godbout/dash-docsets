@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature\Docsets;
+namespace Tests\Feature;
 
 use Tests\TestCase;
-use App\Docsets\LaravelZero;
+use App\Docsets\Ploi;
 use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\DB;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
@@ -11,24 +11,24 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 
-/** @group laravel-zero */
-class LaravelZeroTest extends TestCase
+/** @group ploi */
+class PloiTest extends TestCase
 {
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->docset = new LaravelZero();
+        $this->docset = new Ploi();
         $this->builder = new DocsetBuilder($this->docset);
 
         if (! Storage::exists($this->docset->downloadedDirectory())) {
-            fwrite(STDOUT, PHP_EOL . PHP_EOL . "\e[1;33mGrabbing laravel-zero..." . PHP_EOL);
-            Artisan::call('grab laravel-zero');
+            fwrite(STDOUT, PHP_EOL . PHP_EOL . "\e[1;33mGrabbing ploi..." . PHP_EOL);
+            Artisan::call('grab ploi');
         }
 
         if (! Storage::exists($this->docset->file())) {
-            fwrite(STDOUT, PHP_EOL . PHP_EOL . "\e[1;33mPackaging laravel-zero..." . PHP_EOL);
-            Artisan::call('package laravel-zero');
+            fwrite(STDOUT, PHP_EOL . PHP_EOL . "\e[1;33mPackaging ploi..." . PHP_EOL);
+            Artisan::call('package ploi');
         }
     }
 
@@ -60,90 +60,68 @@ class LaravelZeroTest extends TestCase
     }
 
     /** @test */
-    public function the_left_sidebar_gets_removed_from_the_dash_docset_files()
+    public function the_sidebar_gets_removed_from_the_dash_docset_files()
     {
-        $leftSidebar = 'id="js-nav-menu"';
+        $sidebar = '<aside';
 
         $this->assertStringContainsString(
-            $leftSidebar,
+            $sidebar,
             Storage::get($this->docset->downloadedIndex())
         );
 
         $this->assertStringNotContainsString(
-            $leftSidebar,
+            $sidebar,
             Storage::get($this->docset->innerIndex())
         );
     }
 
     /** @test */
-    public function the_footer_gets_removed_from_the_dash_docset_files()
+    public function the_previous_and_next_navigation_gets_removed_from_the_dash_docset_files()
     {
-        $footer = '<footer';
+        $previousAndNextNavigation = 'id="previous-and-next"';
 
         $this->assertStringContainsString(
-            $footer,
-            Storage::get($this->docset->downloadedIndex())
+            $previousAndNextNavigation,
+            Storage::get($this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/apps/install-wordpress.html')
         );
 
         $this->assertStringNotContainsString(
-            $footer,
+            $previousAndNextNavigation,
             Storage::get($this->docset->innerIndex())
         );
     }
 
     /** @test */
-    public function the_container_width_gets_updated_in_the_dash_docset_files()
+    public function the_top_padding_gets_updated_in_the_dash_docset_files()
     {
         $crawler = HtmlPageCrawler::create(
             Storage::get($this->docset->downloadedIndex())
         );
 
-        $this->assertTrue(
-            $crawler->filter('section.container > div > div')->hasClass('lg:w-3/5')
+        $this->assertFalse(
+            $crawler->filter('main')->hasClass('md:pt-12')
         );
-
 
         $crawler = HtmlPageCrawler::create(
-            $this->docset->innerIndex()
+            Storage::get($this->docset->innerIndex())
         );
 
-        $this->assertFalse(
-            $crawler->filter('section.container > div > div')->hasClass('lg:w-3/5')
+        $this->assertTrue(
+            $crawler->filter('main')->hasClass('md:pt-12')
         );
     }
 
     /** @test */
-    public function the_bottom_padding_gets_updated_in_the_dash_docset_files()
-    {
-        $crawler = HtmlPageCrawler::create(
-            Storage::get($this->docset->downloadedIndex())
-        );
-
-        $this->assertTrue(
-            $crawler->filter('section > div > div')->hasClass('pb-16')
-        );
-
-
-        $crawler = HtmlPageCrawler::create(
-            $this->docset->innerIndex()
-        );
-
-        $this->assertFalse(
-            $crawler->filter('section > div > div')->hasClass('pb-16')
-        );
-    }
-
-    /** @test */
-    public function the_JavaScript_tags_get_removed_from_the_dash_docset_files()
+    public function the_unwanted_JavaScript_tags_get_removed_from_the_dash_docset_files()
     {
         $this->assertStringContainsString(
-            '<script>',
+            'analytics.dennissmink.com',
             Storage::get($this->docset->downloadedIndex())
         );
 
         $this->assertStringNotContainsString(
-            '<script>',
-            $this->docset->innerIndex()
+            'analytics.dennissmink.com',
+            Storage::get($this->docset->innerIndex())
         );
     }
 

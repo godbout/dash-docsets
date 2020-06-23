@@ -1,28 +1,28 @@
 <?php
 
-namespace Tests\Unit\Docsets;
+namespace Tests\Unit;
 
 use Tests\TestCase;
-use App\Docsets\Ploi;
+use App\Docsets\LaravelZero;
 use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\Storage;
 
-/** @group ploi */
-class PloiTest extends TestCase
+/** @group laravel-zero */
+class LaravelZeroTest extends TestCase
 {
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->docset = new Ploi();
+        $this->docset = new LaravelZero();
         $this->builder = new DocsetBuilder($this->docset);
     }
 
     /** @test */
-    public function it_generates_a_table_of_contents()
+    public function it_can_generate_a_table_of_contents()
     {
         $toc = $this->docset->entries(
-            $this->docset->downloadedIndex()
+            $this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/docs/logging/index.html'
         );
 
         $this->assertNotEmpty($toc);
@@ -35,13 +35,13 @@ class PloiTest extends TestCase
 
         $this->assertStringContainsString(
             $header,
-            Storage::get($this->docset->downloadedIndex())
+            Storage::get($this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/docs/logging/index.html')
         );
 
         $this->assertStringNotContainsString(
             $header,
             $this->docset->format(
-                Storage::get($this->docset->downloadedIndex())
+                Storage::get($this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/docs/logging/index.html')
             )
         );
     }

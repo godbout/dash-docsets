@@ -278,12 +278,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/godbout/dash-docset-builder.git",
-                "reference": "76d15fc36186662ea23cf0b033beb5593583892e"
+                "reference": "8164eb3ee1cba4ef5806c3aa25e79333a2b6fcbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/godbout/dash-docset-builder/zipball/76d15fc36186662ea23cf0b033beb5593583892e",
-                "reference": "76d15fc36186662ea23cf0b033beb5593583892e",
+                "url": "https://api.github.com/repos/godbout/dash-docset-builder/zipball/8164eb3ee1cba4ef5806c3aa25e79333a2b6fcbb",
+                "reference": "8164eb3ee1cba4ef5806c3aa25e79333a2b6fcbb",
                 "shasum": ""
             },
             "require": {
@@ -338,7 +338,7 @@
                 "issues": "https://github.com/godbout/dash-docset-builder/issues",
                 "source": "https://github.com/godbout/dash-docset-builder"
             },
-            "time": "2020-06-22T15:40:32+00:00"
+            "time": "2020-06-23T09:11:31+00:00"
         },
         {
             "name": "illuminate/cache",
