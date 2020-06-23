@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    Dash Docsets created with the lovely (not biased here) [Dash Docset Builder PHP](https://github.com/godbout/dash-docset-builder).
+    <a href="https://kapeli.com/dash">Dash</a> <a href="https://kapeli.com/docsets">Docsets</a> created with the lovely—not biased here—<a href="https://github.com/godbout/dash-docset-builder">Dash Docset Builder</a> in PHP.
 </p>
 
 ___
