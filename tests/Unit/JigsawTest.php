@@ -4,8 +4,8 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Docsets\Jigsaw;
-use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\Storage;
+use Godbout\DashDocsetBuilder\Services\DocsetBuilder;
 
 /** @group jigsaw */
 class JigsawTest extends TestCase

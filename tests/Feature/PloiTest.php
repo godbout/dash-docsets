@@ -4,12 +4,12 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Docsets\Ploi;
-use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\DB;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
+use Godbout\DashDocsetBuilder\Services\DocsetBuilder;
 
 /** @group ploi */
 class PloiTest extends TestCase

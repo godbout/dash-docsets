@@ -4,8 +4,8 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Docsets\Tiki;
-use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\Storage;
+use Godbout\DashDocsetBuilder\Services\DocsetBuilder;
 
 /** @group tiki */
 class TikiTest extends TestCase

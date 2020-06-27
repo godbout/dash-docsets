@@ -4,8 +4,8 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Docsets\LaravelZero;
-use App\Services\DocsetBuilder;
 use Illuminate\Support\Facades\Storage;
+use Godbout\DashDocsetBuilder\Services\DocsetBuilder;
 
 /** @group laravel-zero */
 class LaravelZeroTest extends TestCase
