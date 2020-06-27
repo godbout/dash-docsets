@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
 use Illuminate\Support\Facades\Storage;
+use Godbout\DashDocsetBuilder\Docsets\BaseDocset;
 
 class Jigsaw extends BaseDocset
 {

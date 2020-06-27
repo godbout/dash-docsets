@@ -2,11 +2,12 @@
 
 namespace App\Docsets;
 
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Wa72\HtmlPageDom\HtmlPage;
+use Illuminate\Support\Collection;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
+use Illuminate\Support\Facades\Storage;
+use Godbout\DashDocsetBuilder\Docsets\BaseDocset;
 
 class LaravelZero extends BaseDocset
 {
