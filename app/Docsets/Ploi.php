@@ -22,6 +22,9 @@ class Ploi extends BaseDocset
     ];
 
 
+    /**
+     * overriden because there's a sitemap but not usable
+     */
     public function grab(): bool
     {
         system(
