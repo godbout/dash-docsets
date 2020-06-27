@@ -2,10 +2,10 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Docsets\Tiki;
-use Illuminate\Support\Facades\Storage;
 use Godbout\DashDocsetBuilder\Services\DocsetBuilder;
+use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
 
 /** @group tiki */
 class TikiTest extends TestCase

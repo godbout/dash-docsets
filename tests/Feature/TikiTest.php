@@ -2,15 +2,15 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use App\Docsets\Tiki;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB;
-use Wa72\HtmlPageDom\HtmlPageCrawler;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Storage;
 use Godbout\DashDocsetBuilder\Services\DocsetBuilder;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Tests\TestCase;
+use Wa72\HtmlPageDom\HtmlPageCrawler;
 
 /** @group tiki */
 class TikiTest extends TestCase
