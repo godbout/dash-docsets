@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
 
@@ -122,6 +123,26 @@ class PloiTest extends TestCase
         $this->assertStringNotContainsString(
             'analytics.dennissmink.com',
             Storage::get($this->docset->innerIndex())
+        );
+    }
+
+    /** @test */
+    public function the_online_redirection_html_comment_exists_in_the_docset_files()
+    {
+        $crawler = HtmlPageCrawler::create(
+            Storage::get($this->docset->downloadedDirectory() . '/' . $this->docset->index())
+        );
+
+        $this->assertFalse(
+            Str::contains($crawler->getInnerHtml(), 'Online page')
+        );
+
+        $crawler = HtmlPageCrawler::create(
+            Storage::get($this->docset->innerDirectory() . '/' . $this->docset->index())
+        );
+
+        $this->assertTrue(
+            Str::contains($crawler->getInnerHtml(), 'Online page')
         );
     }
 
