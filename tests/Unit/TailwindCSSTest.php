@@ -55,7 +55,7 @@ class TailwindCSSTest extends TestCase
 
         $this->assertStringNotContainsString(
             $navbar,
-            $this->docset->format(Storage::get($this->docset->downloadedIndex()))
+            $this->docset->format($this->docset->downloadedIndex())
         );
     }
 }

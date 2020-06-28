@@ -41,7 +41,7 @@ class PloiTest extends TestCase
         $this->assertStringNotContainsString(
             $header,
             $this->docset->format(
-                Storage::get($this->docset->downloadedIndex())
+                $this->docset->downloadedIndex()
             )
         );
     }

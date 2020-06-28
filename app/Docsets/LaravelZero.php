@@ -83,9 +83,9 @@ class LaravelZero extends BaseDocset
             || Str::contains($file, "{$this->url()}/404/index.html");
     }
 
-    public function format(string $html): string
+    public function format(string $file): string
     {
-        $crawler = HtmlPageCrawler::create($html);
+        $crawler = HtmlPageCrawler::create(Storage::get($file));
 
         $this->removeHeader($crawler);
         $this->removeLeftSidebar($crawler);

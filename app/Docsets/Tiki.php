@@ -171,9 +171,9 @@ class Tiki extends BaseDocset
         return $entries;
     }
 
-    public function format(string $html): string
+    public function format(string $file): string
     {
-        $crawler = HtmlPageCrawler::create($html);
+        $crawler = HtmlPageCrawler::create(Storage::get($file));
 
         $this->removeNavbar($crawler);
         $this->removeLeftSidebarButton($crawler);

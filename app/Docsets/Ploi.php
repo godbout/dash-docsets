@@ -73,9 +73,9 @@ class Ploi extends BaseDocset
         return $entries;
     }
 
-    public function format(string $html): string
+    public function format(string $file): string
     {
-        $crawler = HtmlPageCrawler::create($html);
+        $crawler = HtmlPageCrawler::create(Storage::get($file));
 
         $this->removeHeader($crawler);
         $this->removeSidebar($crawler);

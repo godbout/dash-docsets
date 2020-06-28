@@ -41,7 +41,7 @@ class LaravelZeroTest extends TestCase
         $this->assertStringNotContainsString(
             $header,
             $this->docset->format(
-                Storage::get($this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/docs/logging/index.html')
+                $this->docset->downloadedDirectory() . '/' . $this->docset->url() . '/docs/logging/index.html'
             )
         );
     }
