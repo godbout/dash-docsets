@@ -26,7 +26,7 @@
         }
     ],
     "require": {
-        "godbout/dash-docset-builder": "dev-master"
+        "godbout/dash-docset-builder": "dev-develop"
     },
     "autoload": {
         "psr-4": {
