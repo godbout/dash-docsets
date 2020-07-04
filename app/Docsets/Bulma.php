@@ -45,7 +45,6 @@ class Bulma extends BaseDocset
             "echo; wget bulma.io/documentation \
                 --mirror \
                 --trust-server-names \
-                --header 'Cookie: javascript_enabled_detect=true' \
                 --reject-regex='{$toIgnore}' \
                 --accept-regex='{$toGet}' \
                 --ignore-case \
