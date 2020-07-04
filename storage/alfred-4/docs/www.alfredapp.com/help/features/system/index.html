@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>System Commands - Alfred Help and Support</title>
+  <meta name="description" content="Using System Commands to shut down, sleep, restart your Mac and more">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Features</a> &gt; System Commands</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>System Commands</h1>
+<p>Alfred includes a very useful set of system commands so that you can quickly control macOS directly from your keyboard.</p>
+<p><img src="system-command-shut.png" alt="System Commands" title="System Commands - Shutdown" /></p>
+<p>In this section, you'll find out about:</p>
+<ul>
+<li><a href="index.html#system">Using System Commands</a></li>
+<li><a href="index.html#eject">Using the Eject and Eject All commands</a></li>
+</ul>
+<hr />
+<h2 id="system">Using System Commands in Alfred</h2>
+<p>The System Commands keywords allow you to tell your Mac to perform an action without having to use the mouse to find a menu item in macOS.</p>
+<p>The following actions can be performed by using the associated keyword. Each keyword can be customised in Alfred's Preferences under Features &gt; System and some actions include an optional confirmation pop-up.</p>
+<ul>
+<li>Screen Saver</li>
+<li>Show Trash</li>
+<li>Empty Trash</li>
+<li>Log Out</li>
+<li>Sleep</li>
+<li>Sleep Displays</li>
+<li>Lock</li>
+<li>Restart</li>
+<li>
+<p>Shut Down</p>
+</li>
+<li>Hide (applications)</li>
+<li>Quit (applications)</li>
+<li>Force Quit (applications)</li>
+<li>
+<p>Quit All (applications)</p>
+</li>
+<li>Volume Up</li>
+<li>Volume Down</li>
+<li>
+<p>Toggle Mute</p>
+</li>
+<li>Eject (Local Mounted Volumes)</li>
+<li>Eject All</li>
+</ul>
+<blockquote>
+<p><strong>Want to lock your screen without returning to the login screen?</strong></p>
+<p>Launch System Preferences, go to Security &amp; Privacy &gt; General, and check the box to &quot;require password X minutes after sleep or screen saver begins&quot;. Using the &quot;screensaver&quot; keyword will now lock your screen, requiring a password to unlock. </p>
+<p>If you prefer this to the default Lock action, you can even disable the Lock action and change the screensaver keyword to &quot;lock&quot;.</p>
+</blockquote>
+<p><img src="system-commands-list.png" alt="System Commands" title="System Commands" /></p>
+<hr />
+<h2 id="eject">Using the Eject and Eject All commands</h2>
+<p>The Eject and Eject All actions have additional optional settings.</p>
+<h3>Setting media types to eject</h3>
+<p>By default, Alfred will look for local mounted volumes when you use the Eject action; This includes USB drives, DVDs and mounted images. </p>
+<p>You can change the type of media included in your Eject list, changing to scope to only removable media, or to more broadly include mounts in /Volumes/ as well.</p>
+<h3>Adding volumes to a blacklist</h3>
+<p>If there are any volumes you want to avoid ejecting by mistake, these can be added to your blacklist. Simply click the + button in the bottom right and type the name of the volume you'd like Alfred to exclude from the Eject list. </p>
+<p>Wildcards (using the asterisk *) and simple character classes (e.g. [Bb]ackup) can be used for volumes where the name can vary.</p>
+<p>You can remove the volume later on by selecting it and pressing the - button, and can reset the original blacklist with the Reset button.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../index.html">Features</a>
+        <a href="../../workflows/index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00102s on 3rd Jul 2020 at 16:16 -->
+<!-- served from static cache -->

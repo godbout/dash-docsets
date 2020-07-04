@@ -1,0 +1,27 @@
+function rot($ting) { return $ting.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}); }
+
+function setEl(elAll, text, href) {
+  for (var i = 0; i < elAll.length; i++) {
+    var el = elAll[i];
+    // make sure the element is a DOM element
+    if ( el && el.tagName ) {
+      if ('textContent' in el) {
+        el.textContent = text;
+      } else if ('innerText' in el) { // Special case for IE8
+        el.innerText = text;
+      }
+      el.href = href;
+    }
+  }
+}
+
+var mlt = rot("znvygb:");
+var domn = rot("@nyserqncc.pbz");
+var ieml = rot("vasb");
+var leml = rot("yvprafr");
+
+var iemlEl = document.querySelectorAll('a.ieml');
+var lemlEl = document.querySelectorAll('a.leml');
+
+setEl( iemlEl, ieml + domn, mlt + ieml + domn );
+setEl( lemlEl, leml + domn, mlt + leml + domn );

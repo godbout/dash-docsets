@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>File Filter Input - Alfred Help and Support</title>
+  <meta name="description" content="Create custom file filters to search for file types or in search scopes you specify.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../../index.html">Help and Support</a> &gt; <a href="../../index.html">Workflows</a> &gt; <a href="../index.html">Inputs</a> &gt; File Filter</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>File Filter Input</h1>
+<p>File filter workflows are a fantastic way to create filtered searches where you specify the file types you want Alfred to search and/or the locations you want him to search in.</p>
+<p>Jump to:</p>
+<ul>
+<li><a href="index.html#why">Why create a file filter?</a></li>
+<li><a href="index.html#setup">Setting Up Your File Filter</a></li>
+<li><a href="index.html#workflow">Creating your own File Filter Workflows</a></li>
+<li><a href="index.html#download">Download an example workflow</a></li>
+</ul>
+<hr />
+<h2 id="why">Why create a file filter?</h2>
+<p>A file filter allows you to narrow down your search to particular file types you want to find, making it easier to locate the file you need. </p>
+<p>Rather than add every possible file type to your default Alfred results, or trawl through an unfiltered list of all files that match your search term, these finely focused filters will help you find the results you need in a moment.</p>
+<p>You can then trigger the file search using the file filter keyword or adding a <a href="../../triggers/hotkey/index.html">hotkey</a>.</p>
+<hr />
+<h2 id="setup">Setting Up Your File Filter</h2>
+<p>In the File Filter input, you can specify:</p>
+<ol>
+<li>File types searched</li>
+<li>Search scope within which Alfred should search</li>
+<li>Fields to search</li>
+<li>How you want to limit and sort the results</li>
+</ol>
+<p><img src="file-filter-basic-search.png" alt="File Filter example" /></p>
+<h3 id="contenttree">1. File Types</h3>
+<p>First, you'll set the File Types you want to search. Leave this blank to search all file types, and specify the search scope instead.</p>
+<p>To add File Types, drag files of the type you want from Alfred's results or from Finder into the File Types box. Alternatively, type their UTIs (Uniform Type Identifier) in.</p>
+<blockquote>
+<h4>Broadening File Types</h4>
+<p>When typing in the file types, you can add a specific ContentType or add a ContentTypeTree to broaden the file types.</p>
+<p>For example, a png file is of the ContentType <em>public.png</em>, and a ContentTypeTree of</p>
+<p><em>public.png<br/>
+public.image<br/>
+public.data<br/>
+public.item<br/>
+public.content</em></p>
+<p>The ContentTypeTree goes from the most precise classification (png) to the broadest (content), so if you'd like to include anything that conforms to the public.image ContentTypeTree, press the + button and add a &quot;+public.image&quot; entry.</p>
+<p>Sounds complicated? If you're not sure, don't worry about it. You can just drag a png, a jpg and a gif into the File Types box instead to include these multiple file types in your filter.</p>
+</blockquote>
+<h3>2. Search Scope</h3>
+<p>You can specify a search scope by dragging one or many folders into the Search Scope tab.</p>
+<p>Only check the box to show files marked as System File if you really need to include these, as they'll otherwise add noise (and seemingly strange files) to your results.</p>
+<h3>3. Fields</h3>
+<p>By default, Alfred searches the display name, file name and Finder comments added to the file, which is usually sufficient to search for files by name.</p>
+<p>If you need to search further fields, such as macOS Tags (kMDItemUserTags), you can add these fields here. You can exclude fields with the NOT column.</p>
+<p>You can also change the anchoring to broaden the search with wildcarding:</p>
+<ul>
+<li>The &quot;Words&quot; column searches from word boundaries (the beginning of a word, rather than anywhere within a word)</li>
+<li>The &quot;Split&quot; column splits each word into a separate parameter instead of grouping them together as a single query</li>
+</ul>
+<h3>4. Limit and Sort</h3>
+<p>Optionally, you can set a date range (today, last 3, 7 or 30 days, or older than 30 days) for when the file was created or last modified.</p>
+<p>The Result Limit can be set to anywhere from 10 to 200 results, but we recommend keeping it below 100 to keep things snappy!</p>
+<p>Finally, you can sort the results based on Alfred's Knowledge, which takes into account your previous usage, or you can sort by Creation or Last Modified date.</p>
+<h3>What's next?</h3>
+<p>The simplest example using the File Filter is to connect this workflow item to an &quot;Open file&quot; action to filter for folders only and open them in Alfred. </p>
+<p>Optionally, set an &quot;Open with&quot; application in the &quot;Open file&quot; action to open these files in an app other than the standard one (e.g. open photos in your photo editing software instead of Preview.app)</p>
+<p>The placeholder title and subtitle is displayed in Alfred's results until the File Filter search query text returns results. </p>
+<p>Placeholder text is no longer required, but is recommended. The placeholder title and subtitle appear until you start typing your actual search query text. Without a placeholder, your filter will still work, but will not appear until you start typing your search query text.</p>
+<hr />
+<h2 id="workflow">Creating your own File Filter Workflow</h2>
+<p>In this example, let's create a file filter that searches only for PDFs in your Documents folder. If you're searching the contents of this folder every day, it makes it much quicker to create a search like this rather than manually navigating into the folder every time.</p>
+<ol>
+<li>
+<p>Launch Alfred's preferences to the Workflows tab</p>
+</li>
+<li>
+<p>Click the + button at the bottom of your Workflows sidebar, and select Templates &gt; Files &amp; Apps &gt; File filter from keyword and open. Give your workflow a name and a bundle ID. <img src="file-filter-template-selection.png" alt="Choosing Templates" /></p>
+</li>
+<li>
+<p>Double-click the File Filter object to make the dropdown appear.</p>
+</li>
+<li>
+<p>Set your keyword to &quot;pdf&quot; and add a title (e.g. &quot;PDF File Searcher&quot;) and some subtext that explains what the workflow will do.</p>
+</li>
+<li>Drag a PDF file to the &quot;File types&quot; box so that Alfred knows you want to search for PDF files only. </li>
+</ol>
+<p><img src="file-filter-basic-setup.png" alt="File Filter File Type" /></p>
+<p>You could now save your workflow and be all done, but let's add a few more improvements.</p>
+<ol start="6">
+<li>
+<p>Optionally, you can set an icon for your workflow by dragging a pdf file or an icon of your choice to the image well that says &quot;Drop an icon above&quot;.</p>
+</li>
+<li>Want to set the search scope to only search specific folders? Go to the Advanced tab and drag in the folders you want to search in this workflow. Here we'll add the Documents folder, but you can add as many as you like or leave it blank to use your default Alfred search scope. </li>
+</ol>
+<p><img src="file-filter-search-scope.png" alt="File Filter Scope" /></p>
+<ol start="8">
+<li>
+<p>Click the save button.</p>
+</li>
+<li>Want to give your workflow a clearer name? Double-click the workflow in the left sidebar to set a name and a description, then click Save.</li>
+</ol>
+<p><img src="pdf-file-search-details.png" alt="File Filter Details" /></p>
+<p>Now launch Alfred and type &quot;pdf&quot; followed by your keyword and you will see that only PDF files will appear in your filtered search.</p>
+<p><img src="pdf-food-club.png" alt="File Filter Results" /></p>
+<p>Congratulations, you've created your first workflow! You can now create filters like this but drag different file types to filter only folders, images, text files and more. </p>
+<hr />
+<h2 id="download">Download an Example File Filter Workflow</h2>
+<p><a href="https://www.alfredapp.com/media/workflows/PDF-File-Searcher.alfredworkflow">Download the PDF File Searcher workflow</a> to see how you can easily create your own file filters and search your Mac more efficiently.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../overview/index.html">Overview</a>
+        <a href="../../../getting-started/index.html">Getting Started</a>
+        <a href="../../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../../general/index.html">General</a>
+        <a href="../../../features/index.html">Features</a>
+        <a href="../../index.html">Workflows</a>
+        <a href="../../../appearance/index.html">Appearance</a>
+        <a href="../../../advanced/index.html">Advanced</a>
+        <a href="../../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../../powerpack/index.html">Powerpack</a>
+        <a href="../../../update/index.html">Update</a>
+        <hr>
+        <a href="../../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../../recover-license/index.html">Recover License</a>
+        <a href="../../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../../index.html">Support</a></li>
+          <li><a href="../../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../../contact/index.html" class="fimage"><img src="../../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00155s on 3rd Jul 2020 at 17:03 -->
+<!-- served from static cache -->

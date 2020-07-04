@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Script Filter - Workflow Input Objects - Alfred Help and Support</title>
+  <meta name="description" content="The Script Filter input is one of the most powerful workflow objects, allowing you to populate Alfred's results with your own custom items.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../../index.html">Help and Support</a> &gt; <a href="../../index.html">Workflows</a> &gt; <a href="../index.html">Inputs</a> &gt; Script Filter</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Script Filter Input</h1>
+<p>The Script Filter input is one of the most powerful workflow objects, allowing you to populate Alfred's results with your own custom items.</p>
+<p><img src="json-example.png" alt="JSON Example" /></p>
+<p>Note: Both the JSON and the legacy XML Output Formats are available as examples within Alfred's Workflow preferences. Select the [+] button &gt; Getting Started and choose &quot;Script Filter Output&quot; to install the workflow.</p>
+<p>Take a look at <a href="json/index.html">the JSON Format page for more details</a>. </p>
+<p>Jump to:</p>
+<ul>
+<li><a href="index.html#config">Configuring the Script Filter</a></li>
+<li><a href="index.html#behaviour">Script Behaviour</a></li>
+<li><a href="index.html#alfred-filters-results">Alfred Filtering Results</a></li>
+<li><a href="index.html#resources">Useful Resources</a></li>
+</ul>
+<hr />
+<h2 id="config">Configuring the Script Filter</h2>
+<p>Script Filters are configured like any other workflow input in that they require a keyword, title and icon.</p>
+<p><img src="json-format.png" alt="Keyword Configuration" /></p>
+<p>The placeholder title and subtitle is displayed in Alfred's results until the Script Filter keyword is matched or the Script Filter is run. When the Script Filter is first run, the subtext is replaced by the &quot;Please Wait&quot; subtext which gives the user feedback while waiting for the initial returned result items.</p>
+<p>Placeholder text is no longer required, but is recommended. The placeholder title and subtitle appear until you start typing your actual search query text. Without a placeholder, your filter will still work, but will not appear until you start typing your search query text.</p>
+<p>The keyword works much like any other keyword throughout Alfred, it allows him to know when you want to run your Script Filter.</p>
+<h3>Keyword argument types</h3>
+<p>There are some subtle nuances regarding the keyword argument types which are worth understanding as it can help get the most out of your filter.</p>
+<h4>Argument Required</h4>
+<p>The Placeholder text and subtext are shown until the user types an argument. The script is not run until an argument is present. Once an argument is typed, the &quot;Please Wait&quot; subtext is shown until the initial script results are returned.</p>
+<h4>Argument Optional</h4>
+<p>The script is run immediately on the keyword matching, with the placeholder text and &quot;Please Wait&quot; subtext being shown until the initial script results are returned.</p>
+<h4>No Argument</h4>
+<p>The script is run immediately on keyword matching with the placeholder text and &quot;Please Wait&quot; subtext being shown until the initial script results are returned. If an argument is typed, Alfred no longer sees this Script Filter as relevant and any related results are removed from Alfred.</p>
+<hr />
+<h2 id="xml">XML Output Format</h2>
+<p>The <a href="xml/index.html">XML version</a> is available for legacy, but new workflows should use the <a href="json/index.html">JSON format</a> instead.</p>
+<hr />
+<h2 id="behaviour">Script Behaviour</h2>
+<p>You can control  the script execution behaviour when using a Script Filter input, including the queueing mode, queueing delay and trimming of whitespaces in arguments. You'll find this under the &quot;Run Behaviour&quot; button.</p>
+<p><img src="script-behaviour-options.png" alt="Script Behaviour" /></p>
+<h3>Queue Mode</h3>
+<p>The options for the 'Queue Mode' are self explanatory, you can either wait until the previous script finishes before running the script again with the latest argument, or you can terminate the currently running script and run a new instance of the script with the latest argument.</p>
+<p>You can experiment to see which mode suits your script better. As a general rule, if you have a slow script, it may be better to use the 'terminate' option. If you have a script which needs to finish each time and is quite fast, then use the 'queue' option.</p>
+<h3>Queue Delay</h3>
+<p>This option allows you tweak the behaviour of when a script is queued (or run). It allows you to hold back from running the script if the user is currently typing, which is beneficial if your script is slow or uses a web API. It can also prevent flooding.</p>
+<p>If you select the Automatic option, Alfred profiles how fast the user is typing and tries to only run the script when the user has stopped typing.</p>
+<p>Unless you have a reason not to, it's recommended that you select &quot;Always run immediately for first typed arg character&quot; as this may make your script input perceptually faster to the user.</p>
+<h3>Argument Whitespaces Trimming</h3>
+<p>This option allows you to tell Alfred whether the whitespaces in your arg should be trimmed. By default, the option is set to trim irrelevant spaces to prevent a script from being re-run unnecessarily if there are multiple spaces.</p>
+<p>If the spaces are significant and should be retained as part of your argument, use the &quot;Don't trim arg spaces, as they are significant&quot; option instead.</p>
+<hr />
+<h2 id="alfred-filters-results">Alfred Filters Results</h2>
+<p>You can choose to run the script once, and allow Alfred to filter the results from all results returned by the script. </p>
+<p>This is a highly efficient way to return results fast as Alfred handles the filtering, rather than running the script multiple times as additional characters are typed and the search is refined.</p>
+<h3>Match Mode</h3>
+<p>You can set the match mode Alfred uses to filter the results from the configuration cog to the right of the &quot;Alfred Filters Results&quot; checkbox. These modes pair well with the &quot;<a href="json/index.html#match">match</a>&quot; property in the <a href="json/index.html">Script Filter JSON output</a>.</p>
+<p><img src="match-mode.png" alt="Match Mode" /></p>
+<p>Where phrase means the title or match property, the match modes are:</p>
+<h4>Exact from word boundary</h4>
+<p>This behaviour is the default behaviour for filtering, and matches pre-Alfred 3.5 behaviour. Results will match if the search term is an exact match from a word boundary in the phrase.</p>
+<p>e.g. &quot;My Family Photos&quot; will match with the queries &quot;My Family Photos&quot;, &quot;Family Photos&quot;, &quot;Photos&quot;.</p>
+<h4>Exact from start (anchored)</h4>
+<p>This is the most strict matching mode. Results will match only if they are an exact anchored match of the phrase.</p>
+<p>e.g. &quot;My Family Photos&quot; will match with the queries &quot;My Family Photos&quot;, &quot;My Family&quot;.</p>
+<h4>Word matching</h4>
+<p>This is loose matching, and will match words in the phrase in any order.</p>
+<p>e.g. &quot;My Family Photos&quot; will match with the queries &quot;My Family Photos&quot;, &quot;Photos Family&quot;, &quot;Ph Fa&quot;.</p>
+<hr />
+<h2 id="resources">Useful Resources</h2>
+<ul>
+<li>The script runs (language, escaping, script) in the same way as a <a href="../../actions/run-script/index.html">Run Script</a> action.</li>
+<li>You'll find additional information and useful discussion relating to workflows on the <a href="https://www.alfredforum.com">Alfred forum</a></li>
+<li>Upload your best workflows to <a href="http://packal.org">Packal</a>, a great user-generated workflows and themes repository</li>
+<li><a href="http://github.com">Github</a> provides hosting suitable for your workflows</li>
+</ul>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../overview/index.html">Overview</a>
+        <a href="../../../getting-started/index.html">Getting Started</a>
+        <a href="../../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../../general/index.html">General</a>
+        <a href="../../../features/index.html">Features</a>
+        <a href="../../index.html">Workflows</a>
+        <a href="../../../appearance/index.html">Appearance</a>
+        <a href="../../../advanced/index.html">Advanced</a>
+        <a href="../../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../../powerpack/index.html">Powerpack</a>
+        <a href="../../../update/index.html">Update</a>
+        <hr>
+        <a href="../../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../../recover-license/index.html">Recover License</a>
+        <a href="../../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../../index.html">Support</a></li>
+          <li><a href="../../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../../contact/index.html" class="fimage"><img src="../../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00165s on 3rd Jul 2020 at 21:23 -->
+<!-- served from static cache -->

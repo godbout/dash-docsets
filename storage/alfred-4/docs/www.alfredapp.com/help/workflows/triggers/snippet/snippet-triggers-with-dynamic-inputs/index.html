@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Using Snippet Triggers with Dynamic Inputs - Alfred Help and Support</title>
+  <meta name="description" content="The Snippet Trigger is useful for the creation of snippets where standard snippets and dynamic placeholders aren't sufficient. While this object can be used as a trigger for any kind of workflow, a brilliant use for it is to show an input field when pasting a snippet.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../../../index.html">Help and Support</a> &gt; <a href="../../../index.html">Workflows</a> &gt; <a href="../../index.html">Triggers</a> &gt; <a href="../index.html">Snippet</a> &gt; Using Snippet Triggers with Dynamic Inputs</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Using Snippet Triggers with Dynamic Inputs</h1>
+<p>The Snippet Trigger, a new object added in Alfred 3.4, is useful for the creation of snippets where standard <a href="../../../../features/snippets/index.html">snippets</a> and <a href="../../../advanced/placeholders/index.html">dynamic placeholders</a> aren't sufficient.</p>
+<p>While this object can be used as a trigger for any kind of workflow action, a brilliant use for it is to show an input field when pasting a snippet. </p>
+<p>For example, typing the snippet anywhere can launch Alfred so that you can enter some free text.</p>
+<p><img src="trigger-hello-ellie.png" alt="Snippet Trigger pops up Alfred window" /></p>
+<p>The snippet content, including your free text, will then be pasted to your frontmost app. Handy, isn't it?</p>
+<p><img src="trigger-hello-ellie-2.png" alt="Snippet Trigger pastes snippet content" /></p>
+<p>In this tutorial, we'll look at four ways to use Snippets to trigger actions on your Mac:</p>
+<ol>
+<li><a href="index.html#non-text">Performing a non-text action: Trigger a System Command (or any action) with a text snippet</a></li>
+<li><a href="index.html#script">Running a script and pasting the output: Work out the time of day to dynamically include the right greeting (e.g. Good morning!)</a></li>
+<li><a href="index.html#free-text">Entering free text to include it in the pasted snippet</a></li>
+<li><a href="index.html#list-filter">Choosing text from a pre-defined list to include in the pasted snippet</a></li>
+</ol>
+<blockquote>
+<h3>Take a hands-on look at the workflow</h3>
+<p>To see this workflow in action, go to Alfred's Workflows preferences and add the built-in workflow from the [+] symbol at the bottom of the left sidebar, under Getting Started &gt; Snippet Triggers. Double-click any object to see how it's configured.</p>
+</blockquote>
+<hr />
+<h2 id="non-text">1. Performing a non-text action</h2>
+<p>The first example in the <strong>Snippet Triggers - Getting Started</strong> workflow uses a snippet trigger to perform a System Command.</p>
+<p>Typing the keyword <code>\\showtrash</code> in any text input will trigger the action. Your typed snippet will disappear, and the action - showing the Trash folder in Finder - will be performed.</p>
+<p><img src="snippet-trigger-non-text.png" alt="image" /></p>
+<p>The snippet consists of two parts; The keyword itself (<code>showtrash</code>), and the shared prefix (<code>\\</code>). In other words, I'll need to type <code>\\showtrash</code> to trigger my workflow.</p>
+<p><img src="prefix-keyword.png" alt="A snippet consists of a prefix and keyword" /></p>
+<p><strong>A shared prefix is used by all your snippet triggers</strong>, and ensures that the keyword isn't accidentally triggered by being too simple.</p>
+<h2 id="script">2. Running a script and pasting the output</h2>
+<p>In the second example, the snippet <code>\\greetmsg</code> triggers a simple script which pastes a greeting, e.g. Good morning, that is relevant to the current time of day. </p>
+<p>The workflow consists of three objects; A <a href="../index.html">Snippet Trigger</a>, a <a href="../../../actions/run-script/index.html">Run Script Action</a> and a <a href="../../../outputs/copy-to-clipboard/index.html">Copy to Clipboard Output</a>.</p>
+<p><img src="snippet-triggers-greet.png" alt="image" /></p>
+<p>This custom script establishes which message to paste based on the time of day, then passes this argument to the <strong>Copy to Clipboard</strong> output. </p>
+<p>Checking the &quot;Automatically paste to front most app&quot; box in the <strong>Copy to Clipboard</strong> configuration will paste to the focus text field in focus below Alfred.</p>
+<h2 id="free-text">3. Creating a snippet with free text</h2>
+<p>The objective of this snippet is to let me type the name of the recipient for my message before pasting the full message. As the name changes every time, I simply need a free text field to fill in the blank.</p>
+<p><img src="trigger-hello-ellie.png" alt="Snippet Trigger - Free text input" /></p>
+<p>My workflow consists of three objects; A <a href="../index.html">Snippet Trigger</a>, a <a href="../../../inputs/keyword/index.html">Keyword Input</a> and a <a href="../../../outputs/copy-to-clipboard/index.html">Copy to Clipboard Output</a>.</p>
+<p><img src="snippet-trigger-hello.png" alt="image" /></p>
+<p>The second object is the <strong>Keyword input</strong>, where I'll enter the name of my recipient.</p>
+<p>In this case, I've left the keyword itself blank (as the snippet trigger launches this instead of a standard keyword).</p>
+<p>The dropdown is set to &quot;Argument Required&quot;, which ensures that I don't accidentally leave the name of my recipient blank.</p>
+<p><img src="snippet-trigger-keyword.png" alt="Keyword configuration" /></p>
+<p>The title and subtext gives me context of what my snippet will paste, and will appear when Alfred is popped up by the snippet trigger.</p>
+<p><img src="trigger-hello-ellie.png" alt="Snippet Trigger pops up Alfred window" /></p>
+<p>In the <strong>Copy to Clipboard</strong> object, I'll set the fixed text I want to paste. The <code>{query}</code> is where the name I added earlier will be added, completing my snippet.</p>
+<p><img src="snippet-trigger-clipboard.png" alt="Copy to Clipboard text" /></p>
+<p>Finally, typing <code>\\hellomsg</code> and entering a name will now paste the full message, including the free text name.</p>
+<p><img src="trigger-hello-ellie-2.png" alt="Message pasted" /></p>
+<h2 id="list-filter">4. Creating a snippet with a list of items to fill in the blank</h2>
+<p>Making a subtle change by replacing the second object with the List Filter input, I can switch to Alfred showing me a list of pre-set available names, rather than a text field.</p>
+<p><img src="snippet-trigger-thanks.png" alt="Snippet Trigger with List to choose from" /></p>
+<p>The <strong>Snippet Trigger</strong> is set in the same way as above, with the keyword <code>thanksmsg</code> and the <code>\\</code> prefix. </p>
+<p>The second object is a <strong>List Filter input</strong>, configured to give me a list of options.</p>
+<p><img src="snippet-trigger-list-config.png" alt="List configuration" /></p>
+<p>Take a look at the list items; Each one has a Title and an Argument set. The Title (and subtitle if used) will be shown in Alfred's results when your list pops up, while the Argument is the content that will be passed on to the next object as query.</p>
+<p><img src="snippet-trigger-list-options.png" alt="List options in Alfred" /></p>
+<p>Onto our third object; The <strong>Copy to Clipboard output</strong>. Again, the <code>{query}</code> is replaced with the name I've selected from the list, and the content of this object is pasted to the front most application.</p>
+<p><img src="snippet-trigger-clipboard-thanks.png" alt="Copy to Clipboard content" /></p>
+<h2>Doing even more with Snippet Triggers</h2>
+<p>Your imagination is the limit with Snippet Triggers, so take a look at which of your snippets could be made more efficient with lists or free text, saving you even more time.</p>
+<p>You can even chain multiple inputs, storing your values as variables along the way, to paste a longer message with multiple custom arguments. Take a look at the &quot;Chaining Inputs&quot; workflow in the built-in Examples provided in Alfred's Workflows tab.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../../../index.html">Home</a>
+        <a href="../../../../overview/index.html">Overview</a>
+        <a href="../../../../getting-started/index.html">Getting Started</a>
+        <a href="../../../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../../../general/index.html">General</a>
+        <a href="../../../../features/index.html">Features</a>
+        <a href="../../../index.html">Workflows</a>
+        <a href="../../../../appearance/index.html">Appearance</a>
+        <a href="../../../../advanced/index.html">Advanced</a>
+        <a href="../../../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../../../powerpack/index.html">Powerpack</a>
+        <a href="../../../../update/index.html">Update</a>
+        <hr>
+        <a href="../../../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../../../recover-license/index.html">Recover License</a>
+        <a href="../../../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../../../index.html">Support</a></li>
+          <li><a href="../../../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../../../contact/index.html" class="fimage"><img src="../../../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00182s on 3rd Jul 2020 at 17:47 -->
+<!-- served from static cache -->

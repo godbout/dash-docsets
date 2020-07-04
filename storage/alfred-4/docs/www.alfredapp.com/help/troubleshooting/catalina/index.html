@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>macOS Catalina - Alfred Help and Support</title>
+  <meta name="description" content="macOS 10.15 Catalina was released to the general public on 7th October, 2019. These tips will help you make the most of Catalina and Alfred together.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Troubleshooting</a> &gt; macOS Catalina</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>macOS 10.15 Catalina</h1>
+<h3>Skip to specific issues/troubleshooting steps:</h3>
+<ul>
+<li><a href="index.html#apps">I can't find my applications when searching in Alfred</a></li>
+<li><a href="index.html#double">I'm seeing double; Apps are showing twice in Alfred's results</a></li>
+<li><a href="index.html#prefs">My Alfred preferences have disappeared and I'm using either Catalina or iOS 13 beta</a></li>
+<li><a href="index.html#v3">I'm using Alfred 3, can I use it on Catalina?</a></li>
+</ul>
+<hr />
+<h2>Using Catalina with Alfred</h2>
+<p>MacOS 10.15 Catalina was released to the general public on 7th October, 2019. Here are a few tips to make the most of Catalina and Alfred together.</p>
+<ul>
+<li>Make sure that you are using Alfred 4.0.6+</li>
+<li>Update to the latest Catalina release, as updates are frequent early in a release cycle and may include bug fixes.</li>
+<li>If you're doing a fresh install, give your Mac sufficient time to complete its first indexing.</li>
+<li>If you see duplicated apps in your results, type &quot;reload&quot;.</li>
+<li>Ensure that you've <a href="../../getting-started/permissions/index.html">granted Alfred sufficient permissions</a> by following the &quot;Request Permissions...&quot; button in the General tab.</li>
+</ul>
+<hr />
+<h2 id="apps">I can't find my apps when searching in Alfred</h2>
+<p>In macOS 10.15, Apple have moved the location of default applications, so you may find that Alfred doesn't instantly find your apps.</p>
+<blockquote>
+<p>If you have only just installed the new version of macOS, you'll need to give your Mac a few hours to complete the initial index of your data.</p>
+</blockquote>
+<ul>
+<li>First, ensure you're using Alfred 4.0.6+</li>
+<li>Next, go to Features &gt; Default Results &gt; Search Scope and click &quot;Reset&quot; to refresh the search scope.</li>
+<li>Finally, type &quot;reload&quot; into Alfred to refresh the application cache</li>
+</ul>
+<p>This will add the right search scope for apps, and refresh the cache, so you should be all sorted!</p>
+<h2 id="double">Applications are showing twice in Alfred's results</h2>
+<p>Type &quot;reload&quot; into Alfred to refresh the application cache. As the location for default applications has changed, some apps may appear in the cache in both the old and new location. Reloading the cache refreshes it and removes paths that are no longer relevant.</p>
+<h2 id="prefs">My Alfred preferences have disappeared and I'm using Catalina or iOS 13 beta</h2>
+<p>During the Catalina and iOS 13 Beta, there were accepted Apple bugs where iCloud files were just &quot;going missing&quot; if <strong>any devices</strong> connected to your iCloud had been updated to the latest iOS / macOS betas. </p>
+<p>It appears that this issue has generally been resolved in the general public release of Catalina, so make sure that none of your devices are still using a beta version.</p>
+<p>If any files have been lost, you should be able to locate them in your Time Machine backup.</p>
+<hr />
+<h3>Reporting a bug with Alfred</h3>
+<p>If you report a new issue, take a look at the <a href="https://www.alfredforum.com/topic/70-read-first-posting-a-helpful-bug-report/">Reporting Guidelines</a>  before posting to the <a href="https://www.alfredforum.com/forum/40-macos-1015-catalina-beta-bugs-issues/">Catalina section of Alfred Forum</a>.</p>
+<p>Ensure that you read all open and closed bug reports relating to Catalina and please provide as much information as possible; Always include the exact version and build number you're using.</p>
+<hr />
+<h2>I'm using Alfred 3, can I use it on Catalina?</h2>
+<p>Yes, you can use Alfred 3 on macOS Catalina, but please update to the latest version and ensure you're using Alfred 3.8.5+, as older versions don't include the necessary tweaks for the new file paths in Catalina, amongst other OS changes.</p>
+<p>Note that Apple has retired iTunes on Catalina; As a result, the Mini Player is no longer available in Alfred 3 for Catalina users.</p>
+<p>If you're seeing any issues in Alfred 3 on Catalina, please take a look at the troubleshooting steps for Alfred 4 above, as in most cases, the solution is the same. </p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../../features/index.html">Features</a>
+        <a href="../../workflows/index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00113s on 3rd Jul 2020 at 16:18 -->
+<!-- served from static cache -->

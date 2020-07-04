@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Placeholders - Alfred Help and Support</title>
+  <meta name="description" content="Use placeholders in workflows and snippets to add dynamic content">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../../index.html">Help and Support</a> &gt; <a href="../../index.html">Workflows</a> &gt; <a href="../index.html">Advanced Workflow topics</a> &gt; Dynamic Placeholders</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Dynamic Placeholders</h1>
+<p>Alfred offers dynamic placeholders, which allow you to insert dynamically-created content when using <a href="../../../features/clipboard/index.html#snippets">Snippets</a> and in certain <a href="../../index.html">workflow</a> objects.</p>
+
+<h2 id="using-placeholders">What are Dynamic Placeholders?</h2>
+<p>Dynamic placeholders are shortcuts in curly brackets like <code>{date:short}</code>, which are replaced with content (e.g. the current date) when the workflow or snippet is triggered.</p>
+<p>When creating a snippet or setting a workflow output, you may include some fixed, pre-defined text. In other instances, you may want to add the current time, the date in a week, or the contents of your clipboard; This is <strong>dynamic content</strong>, as <strong>it can change every time the snippet is pasted</strong>.</p>
+<p>There are a few key types of content that can be pasted dynamically. Click on the relevant type below to find out more about how to use them, and their specific syntax.</p>
+<ul>
+<li><a href="index.html#date-time">Date and Time Placeholders</a></li>
+<li><a href="index.html#clipboard">Clipboard Contents</a></li>
+<li><a href="index.html#random">Random Placeholder</a></li>
+<li><a href="index.html#variables">Using Variables</a></li>
+<li><a href="index.html#modifiers">Transform Modifiers</a></li>
+<li><a href="index.html#cursor">Cursor Position</a></li>
+</ul>
+<h3>Advanced Placeholders</h3>
+<ul>
+<li><a href="index.html#order">Order of Operations for Replacement of Dynamic Placeholders</a></li>
+</ul>
+<hr />
+<h2 id="date-time">Date and Time Placeholders</h2>
+<p>To use a dynamic date or time, begin with <em>date</em>, <em>time</em>, or <em>datetime</em>.</p>
+<p>You can follow this with optional <a href="index.html#arithmetic">date arithmetic</a> to calculate a date/time in the future or past, and optional default formats (short, medium, long, full). When no format is specified, Alfred uses the &quot;medium&quot; format from macOS as default.</p>
+<p>For example, <code>{date}</code> will paste the current date in default format, while <code>{date +7d +3h:long}</code> will give me the date in seven days, three hours, in the long format.</p>
+<p>The <code>{date}</code>, <code>{time}</code> and <code>{datetime}</code> placeholders use your macOS default formats. You can change these in your Mac's System Preferences &gt; Language &amp; Region &gt; Advanced settings under Date and Time.</p>
+<p><img src="system-prefs-date-time.png" alt="Setting your Date and Time preferences" /></p>
+<p><strong>Example of basic date and time format</strong></p>
+<ul>
+<li><code>{date}</code> for the today's date in medium format</li>
+<li><code>{date:short}</code> for today's date in short version</li>
+<li><code>{time:full}</code> for the current time in full</li>
+<li><code>{datetime:long}</code> for today's date and time in long format</li>
+</ul>
+<h2 id="arithmetic">Date Arithmetic</h2>
+<p>Need to set a date or time at a future or past date? The following formatting allows you to add date and time processing.</p>
+<p><strong>Date arithmetic +/-</strong></p>
+<ul>
+<li><code>1Y</code> : Year<br/></li>
+<li><code>1M</code> : Month (strict uppercase)<br/></li>
+<li><code>1D</code> : Day<br/></li>
+<li><code>1h</code> : Hour<br/></li>
+<li><code>1m</code> : Minute (strict lowercase)<br/></li>
+<li><code>1s</code> : Second</li>
+</ul>
+<p>Add the date formatting after the date, time or datetime placeholder, for example, to show tomorrow's date, use:</p>
+<p><code>{date +1D}</code></p>
+<p>Or to show the time 3 hours and 20 minutes ago, use:</p>
+<p><code>{time -3h -20m}</code></p>
+<p>Date arithmetic works in combination with date formatting, allowing full control over the date and time placeholders.</p>
+<h3>Date examples, including arithmetic</h3>
+<ul>
+<li>Time 10 minutes and 30 seconds ago in long format: <code>{time -10m -30s:long}</code></li>
+<li>Date and time 2 years and two months ago in full format: <code>{datetime -2Y +2M:full}</code></li>
+<li>Date and time 1 year ago, showing the date in two digit format: <code>{datetime -1Y:yy}</code></li>
+</ul>
+<h3 id="unicode">Advanced Date Formatting using Unicode formats</h3>
+<p>Alternatively, you can use the <a href="http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns">Unicode formats for dates</a> to be more specific with your date formatting. These can also be used with arithmetic included before the colon symbol. </p>
+<ul>
+<li>ISO 8601 date format: <code>{date:yyyy-MM-dd'T'HH:mm:ssZZZZZ}</code></li>
+<li>Day/Month/Year 7 days ago: <code>{date -7d:dd/MM/yy}</code></li>
+<li>12-hr clock with time zone: <code>{date:K:mm a, z}</code></li>
+<li>The month only, in a month: <code>{date +1M:MMMM}</code></li>
+<li>The day of the week: <code>{date:EEEE}</code></li>
+<li>The month name and year: <code>{date:MMMM yyyy}</code></li>
+</ul>
+<hr />
+<h2 id="clipboard">Clipboard contents</h2>
+<p>Use <code>{clipboard}</code> by itself to paste the content of your latest clipboard entry as plain text. You can also specify which clipboard item to use by using the clipboard offset, and perform some formatting (uppercase, lowercase and capitals).</p>
+<p><img src="dynamic-placeholder-example.png" alt="Dynamic Placeholder content example" /></p>
+
+<h3>Using clipboard offset to paste previous clipboard items</h3>
+<p>The clipboard offset allows you to specify which clipboard items you want Alfred to paste.</p>
+<p><code>{clipboard}</code> and <code>{clipboard:0}</code> represent the latest item in your clipboard; these may differ if your workflow manipulates the clipboard content.</p>
+<p>For the next items in the clipboard list, use <code>{clipboard:1}</code>, <code>{clipboard:2}</code>, and so on.</p>
+<blockquote>
+<p>Note: Clipboard History must be enabled on your Mac in order for <code>{clipboard:x}</code> items to be available.</p>
+</blockquote>
+<h4>An example of clipboard offset usage</h4>
+<p>For example, if you copy these three text items to your clipboard:</p>
+<blockquote>
+<p>First item copied: <em>Andrew</em><br/>
+Second: <em>hedgehogs</em><br/>
+Third: <em><a href="https://en.wikipedia.org/wiki/Hedgehog">https://en.wikipedia.org/wiki/Hedgehog</a></em></p>
+</blockquote>
+<p>And then create a snippet or workflow output as follows:</p>
+<blockquote>
+<p>Hi <em>{clipboard:2}</em>, thanks for your question about <em>{clipboard:1}</em>. You can find your answer here: <em>{clipboard:0}</em>.</p>
+</blockquote>
+<p>Resulting in:</p>
+<blockquote>
+<p>Hi Andrew, thanks for your question about hedgehogs. You can find your answer here: <a href="https://en.wikipedia.org/wiki/Hedgehog">https://en.wikipedia.org/wiki/Hedgehog</a></p>
+</blockquote>
+<hr />
+<h2 id="random">Random Placeholder</h2>
+<p>The <code>{random}</code> placeholder allows you to return a random number, word or UUID in the location of your placeholder.</p>
+<ul>
+<li><code>{random:UUID}</code> for a random uuid</li>
+<li><code>{random:1..5}</code> for a random number between 1 and 5. These numbers can be omitted for min / max integer range</li>
+<li><code>{random:cheese,apple,biscuits}</code> for a random word from the specified list of words</li>
+</ul>
+<hr />
+<h2 id="variables">Variables</h2>
+<p>Variables can be used in workflows; For examples, you can hold on to an argument for later use by using an <a href="../../utilities/argument/index.html">Argument and Variables Utility</a> to save it as a variable like <code>{var:filename}</code>. You'll then be able to refer to it later in your workflow.</p>
+<p>The built-in &quot;Simple To-Do List&quot; workflow example uses the Arg/Vars to save the task you want to add to your list, and uses it later to append to your to-do list.</p>
+<p>Take a look at the <a href="../variables/index.html">Variables</a> page for a more in-depth explanation of the uses for variables.</p>
+<hr />
+<h2 id="modifiers">Transform Modifiers</h2>
+<p>Placeholder modifiers can be used with the <strong>clipboard</strong> and <strong>workflow variable placeholders</strong>, and allow you to quickly format the text.</p>
+<p>The modifiers follow this format: <code>{placeholder:variation.modifier}</code></p>
+<ul>
+<li><code>uppercase</code></li>
+<li><code>lowercase</code></li>
+<li><code>capitals</code> or <code>capitalcase</code></li>
+<li><code>trim</code>: Trim white spaces and new lines from the beginning and end of your string</li>
+<li><code>reverse</code>: Reverse the whole string</li>
+<li><code>stripdiacritics</code>: Remove accented characters</li>
+<li><code>stripnonalphanumeric</code>: Remove any non-alphanumeric characters such as punctuation or emoji</li>
+</ul>
+<h3>Transform modifiers syntax examples</h3>
+<ul>
+<li><code>{clipboard:3.reverse}</code> : Reverse the third clipboard entry</li>
+<li><code>{var:result.uppercase}</code> : Take the variable called &quot;result&quot; and uppercase it</li>
+<li><code>{clipboard:trim.stripdiacritics}</code> : Transforms can also be stacked, so this example would trim the clipboard content and strip diacritics from the string</li>
+</ul>
+<hr />
+<h2 id="cursor">Cursor Position</h2>
+<p>Once you've written your snippet text, you can tell Alfred where you'd like him to position the cursor once the content has been pasted.</p>
+<p>Use <code>{cursor}</code> to set the position within your snippet.</p>
+<hr />
+<h2 id="order">Order of operations for Replacement of Dynamic Placeholders</h2>
+<p>If you're using different types of placeholder replacement in your <a href="../../index.html">workflows</a>, keep in mind the order of replacement for these placeholders:</p>
+<ol>
+<li><a href="../variables/index.html">Variable replacements</a></li>
+<li>{query} replacement</li>
+<li><a href="index.html">Snippet style dynamic placeholders replacements</a> (date, time, datetime)</li>
+</ol>
+<p>The top level workflow environment variables are treated as literal, but may be processed as they're encountered in processing the workflow.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../overview/index.html">Overview</a>
+        <a href="../../../getting-started/index.html">Getting Started</a>
+        <a href="../../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../../general/index.html">General</a>
+        <a href="../../../features/index.html">Features</a>
+        <a href="../../index.html">Workflows</a>
+        <a href="../../../appearance/index.html">Appearance</a>
+        <a href="../../../advanced/index.html">Advanced</a>
+        <a href="../../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../../powerpack/index.html">Powerpack</a>
+        <a href="../../../update/index.html">Update</a>
+        <hr>
+        <a href="../../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../../recover-license/index.html">Recover License</a>
+        <a href="../../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../../index.html">Support</a></li>
+          <li><a href="../../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../../contact/index.html" class="fimage"><img src="../../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00493s on 3rd Jul 2020 at 16:49 -->
+<!-- served from static cache -->

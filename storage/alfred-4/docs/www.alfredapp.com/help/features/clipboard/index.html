@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Clipboard History - Alfred Help and Support</title>
+  <meta name="description" content="Get quick access to your copied text, file and image clips with Alfred's handy clipboard history feature.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Features</a> &gt; Clipboard History</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Clipboard History</h1>
+<p>The Clipboard History feature, part of the <a href="../../powerpack/index.html" title="Powerpack">Powerpack</a>, is an incredibly useful tool to help you be more efficient. </p>
+<p><img src="clipboard-viewer.png" alt="Clipboard History" title="Clipboard History" /></p>
+<p>With Alfred's Clipboard History, you don't need to worry about text, images and file links you've copied but forgot to paste earlier; It's all there in your searchable history. </p>
+<p>Need to save your most-used text snippets for easy access? Take a look at the fantastic <a href="../snippets/index.html">Snippets</a> feature, which now includes automatic text expansion.</p>
+<p>Discover how to make the most of Clipboard History:</p>
+<ul>
+<li><a href="index.html#clipboard-history">Clipboard History</a></li>
+<li><a href="index.html#snippets">Saving Text Clips as Snippets</a></li>
+<li><a href="index.html#merging">Clipboard Merging</a></li>
+<li><a href="index.html#advanced">Advanced Settings</a></li>
+<li><a href="index.html#troubleshooting">Clipboard Troubleshooting</a></li>
+</ul>
+<hr />
+<h2 id="clipboard-history">Using Clipboard History</h2>
+<blockquote>
+<p><strong>By default the Clipboard is disabled for privacy reasons</strong>. Before you can start using the Clipboard History feature, you need to enable it in Alfred's Preferences, under Features &gt; Clipboard, and grant Alfred <a href="../../getting-started/permissions/index.html">Accessibility permissions</a> in macOS.</p>
+</blockquote>
+<p>Activate the Clipboard History for the history types you want to use by checking the box next to the relevant types. Choose from the dropdown menu how long you want Alfred to remember your clips for; 24 hours, 7 days, 1 month or 3 months.</p>
+<p>When you pop up the Clipboard History viewer using your hotkey, Alfred will show the clips you've copied, which you can scroll through. To filter your results, start typing any word or phrase from the original clip you copied to see matching results.</p>
+<p>You can customise the hotkey and keyword used to show the Clipboard History viewer.</p>
+<p><img src="clipboard-preferences.png" alt="Clipboard Preferences" title="Clipboard Preferences" /></p>
+<p>You can clear your entire clipboard history by typing &quot;clear&quot; in Alfred's main search box and choosing whether you want to erase the last 5 minutes, 15 minutes or all of Alfred's history.</p>
+<p>Alternatively, you can clear single items with Fn (Function key) + Delete (backspace key).</p>
+<p><img src="clipboard-clear-history.png" alt="Clipboard Clear History" title="Clipboard Clear History" /></p>
+<hr />
+<h2 id="snippets">Saving Text Clips as Snippets</h2>
+<p>Use the <strong>Cmd + S</strong> hotkey in the Clipboard History viewer to save a text clip from the clipboard as a snippet.</p>
+<p><a href="../snippets/index.html">Take a look at the Snippets feature page</a> for information on saving text clips in a more permanent way, and using automatic text expansion to quickly replace a typed keyword with the full text snippet.</p>
+<hr />
+<h2 id="merging">Using Clipboard Merging</h2>
+<p>When Merging is active in your Powerpack preferences (under Features &gt; Clipboard &gt; Merging), hold Cmd and double-tap C (Cmd + C + C) quickly to append the currently selected clipboard item to the previously copied text in Clipboard History.</p>
+<p>You'll hear the macOS &quot;Purr&quot; sound to confirm the item has been successfully appended.</p>
+<p><img src="clipboard-merging.png" alt="Clipboard Merging Preferences" /></p>
+<hr />
+<h2 id="advanced">Clipboard Advanced Settings</h2>
+<p>In the Clipboard Advanced preferences, you'll find additional settings to tweak how you want your clipboard to behave.</p>
+<p><img src="clipboard-prefs-advanced.png" alt="Clipboard Advances preferences" /></p>
+<p>You can choose whether you want Alfred to auto-paste to the currently active application. Pasting on Return is active by default.</p>
+<p>You can also set a maximum clip size if you frequently copy very large bodies of text. Alfred will then ignore any copied text over the specified limit to prevent accidental Clipboard History bloating.</p>
+<p>By default, Alfred ignores popular password applications like the macOS Keychain Access and 1Password, so that you don't inadvertently copy a password to your clipboard. You can add more applications you want Alfred to ignore by dragging them into the Ignore Apps box. As a result, Alfred will not add any text copied in these apps into your history.</p>
+<p>By default, Alfred ignores clipboard data marked as Concealed, such as fields where the characters are obscured as you type, but you can choose to store these. </p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting the clipboard</h2>
+<p>If you're having any issues with Clipboard History, such as your clipboard not saving clips, the first step is to type &quot;clear&quot; into Alfred and select the &quot;Clear Clipboard History&quot; option. This will clear and rebuild your Clipboard database, allowing you to start from fresh. Once you've done this, copy a new text snippet and see whether it's being copied correctly.</p>
+<p>Take a look at the <a href="../../troubleshooting/clipboard-history/index.html" title="Clipboard History Troubleshooting">Clipboard History troubleshooting page</a> for further information on troubleshooting the Clipboard History feature.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../index.html">Features</a>
+        <a href="../../workflows/index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.0012s on 3rd Jul 2020 at 16:20 -->
+<!-- served from static cache -->

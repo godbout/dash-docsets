@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Contact</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logos" sketch:type="MSLayerGroup" transform="translate(-512.000000, -128.000000)" fill="#FFFFFF">
+            <g id="contact" transform="translate(512.000000, 135.000000)" sketch:type="MSShapeGroup">
+                <path d="M0,5 L32,30 L64,5 L64,46.9950833 C64,48.654653 62.663269,50 60.9989882,50 L3.00101185,50 C1.34359877,50 0,48.6532394 0,46.9950833 L0,5 Z" id="envelope"></path>
+                <path d="M0,2.22044605e-16 L64,5.68434189e-14 L32.0019531,25 L0,2.22044605e-16 Z" id="licky-bit"></path>
+            </g>
+        </g>
+    </g>
+</svg>

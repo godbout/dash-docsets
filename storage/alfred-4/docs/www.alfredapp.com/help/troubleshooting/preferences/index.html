@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Persisting Alfred's Preferences - Alfred Help and Support</title>
+  <meta name="description" content="Find out how to ensure Alfred can correctly save his preferences to file if you're having issues.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Troubleshooting</a> &gt; Persisting Alfred's Preferences</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Troubleshooting: Persisting Alfred's Preferences</h1>
+<p>If you're finding that Alfred is unable to save your preferences and that he forgets settings when you restart Alfred or your Mac, it's likely that he's unable to persist your settings due to a lack of permissions on your Mac.</p>
+<p>Please follow the troubleshooting steps below carefully.</p>
+<hr />
+<h2>1. Repairing Permissions</h2>
+<p>The most likely reason Alfred can't save your settings is if he doesn't have the permissions to write to disk. Disk Utility checks that the appropriate applications have permissions to write where they should.</p>
+<p>To repair permissions, you'll need to use Terminal directly. These are guidelines for Alfred 4, <a href="index.html#v3">see further down for Alfred 3 instructions</a>.</p>
+<p>Firstly, quit Alfred, then using the following commands in Terminal, replace <em>username</em> with your own username: </p>
+<pre><code>chown -R username:staff ~/Library/Application\ Support/Alfred/
+xattr -rc ~/Library/Application\ Support/Alfred/
+chmod -R u+rwX,go+rX ~/Library/Application\ Support/Alfred/
+
+chown username:staff ~/Library/Preferences/com.runningwithcrayons.Alfred*
+xattr -rc ~/Library/Preferences/com.runningwithcrayons.Alfred*
+chmod 600 ~/Library/Preferences/com.runningwithcrayons.Alfred*</code></pre>
+<p>For anybody who has setup syncing, you also need to reset for the Alfred.alfredpreferences in the sync folder. For example, here I use an Alfred folder within Dropbox, so resetting my synced preferences looks like this:</p>
+<pre><code>chown -R username:staff ~/Dropbox/Alfred/Alfred.alfredpreferences
+xattr -rc ~/Dropbox/Alfred/Alfred.alfredpreferences
+chmod -R u+rwX,go+rX ~/Dropbox/Alfred/Alfred.alfredpreferences</code></pre>
+<p>Replace ~/Dropbox/Alfred/ with the location of your own synced files.</p>
+<h2>2. Unsync Dropbox Settings</h2>
+<p>If you use Dropbox for syncing, the first step is to ensure you are not using the ~/Dropbox/Apps/ folder, as <a href="../dropbox-apps-folder/index.html">this folder is known to cause issues</a> for many users.</p>
+<p>If you are using Alfred's sync feature to keep your preferences on Dropbox, it's possible that there are Dropbox conflict files (where Dropbox couldn't reconcile two versions of the same file and created a duplicate).</p>
+<p>If you've checked Dropbox but can't see any unusual files in your Alfred sync folder, follow these steps:</p>
+<ul>
+<li>In Alfred, change your sync location to be on your local Mac, e.g. ~/Documents/Alfred/ so that Dropbox can be taken out of the equation</li>
+<li>Change a setting and save it</li>
+<li>Re-launch Alfred to see whether this new setting change is being saved</li>
+</ul>
+<h2>3. Resetting Alfred to Defaults</h2>
+<p>The above steps should resolve your issues, but if permissions don't appear to be correctly reset, you can reset Alfred's permissions to defaults. This will ensure that new preferences can be written afresh, but means that your existing preferences and Powerpack license activation will be removed so you'll need to re-activate your Powerpack.</p>
+<ul>
+<li>Quit Alfred</li>
+<li>Delete the following files from your user's Home Folder</li>
+</ul>
+<pre><code>~/Library/Preferences/com.runningwithcrayons.Alfred-3.plist
+~/Library/Preferences/com.runningwithcrayons.Alfred-Preferences.plist
+~/Library/Caches/com.runningwithcrayons.Alfred-3
+~/Library/Application Support/Alfred 3</code></pre>
+<ul>
+<li>Reboot your Mac</li>
+<li>Re-launch Alfred and see whether your preferences are being saved correctly</li>
+</ul>
+<h2>4. Create a New User Account</h2>
+<p>If neither of the solutions above work, there may be some deeper corruption issues on your Mac which means that the steps above have not allowed permissions to be correctly set yet.</p>
+<p>Create a new user account on your Mac (under System Preferences &gt; Users &amp; Groups) and test whether your preferences are correctly saved. If they are, then the issue lies with your original user account.</p>
+<h2>5. Check for Alfred updates</h2>
+<p>We are actively working on making Alfred's syncing more resilient to possible permissions corruption so that he can work around them and/or notify you of any impending permissions issues. Check Alfred for the latest pre-release build to ensure you take advantage of any improvements we've made.</p>
+<hr />
+<h2 id="v3">Repairing Permissions in Alfred 3</h2>
+<p>If you're still using Alfred 3, there are slight variations. Firstly, quit Alfred 3, then using the following commands in Terminal, replace <em>username</em> with your own username: </p>
+<pre><code>chown -R username:staff ~/Library/Application\ Support/Alfred\ 3/
+xattr -rc ~/Library/Application\ Support/Alfred\ 3/
+chmod -R u+rwX,go+rX ~/Library/Application\ Support/Alfred\ 3/
+
+chown username:staff ~/Library/Preferences/com.runningwithcrayons.Alfred-3*
+xattr -rc ~/Library/Preferences/com.runningwithcrayons.Alfred-3*
+chmod 600 ~/Library/Preferences/com.runningwithcrayons.Alfred-3*</code></pre>
+<p>The remaining troubleshooting steps are the same as above, so please take a look at step 2 onwards.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../../features/index.html">Features</a>
+        <a href="../../workflows/index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00111s on 3rd Jul 2020 at 16:16 -->
+<!-- served from static cache -->

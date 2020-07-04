@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Troubleshooting Workflows - Alfred Help and Support</title>
+  <meta name="description" content="Wondering what to do if your workflows aren't working perfectly? Take a look at these common questions for a smoother experience using workflows.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Troubleshooting</a> &gt; Troubleshooting Workflows</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Troubleshooting Workflows</h1>
+<p>Alfred workflows are very flexible and can be used for a huge range of actions.</p>
+<ul>
+<li><a href="index.html#common">Common Troubleshooting Questions</a></li>
+<li><a href="index.html#hotkeys">Hotkey Troubleshooting</a></li>
+</ul>
+<hr />
+<h2 id="common">Common Troubleshooting Questions</h2>
+<h3>I'm seeing error messages in workflows I've imported, or the workflow isn't behaving as expected</h3>
+<p>Workflows can become out-of-date, especially when they work alongside third-party applications, so check if the developer has released a new update or posted about a known issue.</p>
+<p>If the developer has provided details, you'll find then by double-clicking on a workflow name in the left sidebar of Alfred's Workflows preferences.</p>
+<p><img src="workflow-details.png" alt="Workflow details" /></p>
+<p>If these details aren't filled in, check on <a href="http://packal.org">Packal</a> or on the <a href="https://www.alfredforum.com">Alfred Forum</a> for more information about the workflow.</p>
+<p>If you're unable to find a source for the workflow, post on the forum in &quot;Workflows Help &amp; Questions&quot; with as much information as possible, so that fellow Alfred users can help you troubleshoot your issue with the workflow.</p>
+<h2 id="hotkeys">Hotkey Troubleshooting</h2>
+<p>This section refers to the hotkeys set in workflows, rather than Alfred's general hotkey or the ones used for built-in features like Clipboard History and iTunes Mini Player. See the documentation for that particular feature if you need support on hotkeys unrelated to workflows.</p>
+<h3>Why is my hotkey not working?</h3>
+<p>There are a few reasons the hotkey you've set in your workflow may not be working as expected. Navigate to the Workflows preferences and follow the steps below:</p>
+<ol>
+<li><strong>Is your workflow enabled?</strong> If the workflow is greyed-out, right-click the name of the workflow in the sidebar to re-enable your workflow.</li>
+<li><strong>Is your hotkey object connected?</strong> The hotkey needs to be connected to the action you want it to perform.</li>
+<li><strong>In the hotkey object, is the correct hotkey set?</strong> If no hotkey is displayed, or it isn't the hotkey you expect, double-click the Hotkey object, set your hotkey and save it.</li>
+<li><strong>Does your hotkey specify Related Apps?</strong> In the hotkey's dropdown sheet, under &quot;Related Apps&quot;, check whether you've dragged in applications to specify when the hotkey should be active/inactive.</li>
+</ol>
+<h3>Can I use the same hotkey in multiple workflows?</h3>
+<p>It generally isn't possible to use the same hotkey to perform different actions in different workflows, as it would be easy to forget that you've used the same hotkey elsewhere, causing it to trigger unwanted actions as a side-effect.</p>
+<p>However, you can connect multiple actions to a single hotkey within a single workflow. By keeping these in one place, you can ensure that your hotkey only performs the actions you intended it to.</p>
+<p>In the rare case where a workflow containing a hotkey is disabled, it becomes possible to set the same hotkey in another workflow. Please be careful as this can cause unwanted double-actions when you re-enable the first workflow.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../../features/index.html">Features</a>
+        <a href="../../workflows/index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00113s on 3rd Jul 2020 at 22:53 -->
+<!-- served from static cache -->

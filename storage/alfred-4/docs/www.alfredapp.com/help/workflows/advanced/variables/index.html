@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Using Variables in Workflows - Alfred Help and Support</title>
+  <meta name="description" content="A more in-depth guide to using variables as part of your Alfred 3 workflows.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../../index.html">Help and Support</a> &gt; <a href="../../index.html">Workflows</a> &gt; <a href="../index.html">Advanced Workflow topics</a> &gt; Using Variables in Workflows</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Using Variables in Workflows</h1>
+<p>Have you found yourself wanting to create a workflow where you need to enter or select multiple arguments to use later on in your workflow? Or wanted to make it easy for users to add their own identifier or API key to a workflow?</p>
+<p>This is where you can use the new variables in Alfred 3; They can be used in a multitude of places - as keywords, arguments, in <a href="../../utilities/json/index.html">JSON</a> utilities - and allow you to easily store an argument for use later in your workflow.</p>
+<ul>
+<li><a href="index.html#getting-started">Getting Started with Workflow Variables</a></li>
+<li><a href="index.html#environment">Setting Workflow Environment Variables</a></li>
+<li><a href="index.html#variables">Setting Variables Within a Workflow</a></li>
+</ul>
+<hr />
+<h2 id="getting-started">Getting Started with Workflow Variables</h2>
+<p>We've included a few workflows in the <a href="../../../guides-and-tutorials/index.html">Getting Started guides and examples</a> in Alfred, which you can find under the [+] button at the bottom of the Workflows sidebar in Alfred's preferences.</p>
+<p>In particular, the <strong>Getting Started &gt; Workflow Variables</strong> and the <strong>Examples &gt; Simple To-Do List</strong> make use of variables to store multiple pieces of information throughout the workflow.</p>
+<p><img src="to-do-list-workflow.png" alt="To-Do List Example Workflow" /></p>
+<p>Variables use the format <em>{var:myvariable}</em> where <em>myvariable</em> is the name you give your variable when creating it. You can then store an associated value for your variable.</p>
+<p>You can add variables within workflow utilities (<a href="../../utilities/argument/index.html">Arg and Vars</a> and <a href="../../utilities/json/index.html">JSON</a>) and in the Workflow Environment Variables.</p>
+<h3 id="environment">Setting Workflow Environment Variables</h3>
+<p>In the <strong>Simple To-Do List</strong> workflow, the first variable to set in the Workflow Environment Variables is the path to which the to-do lists are saved. Click the [x] in the top right of your workflow to show the Workflow Environment Variables panel. Conveniently, you'll also find the &quot;About This Workflow&quot; information in the same panel.</p>
+<p><img src="workflow-environment-variables.png" alt="Workflow Environment Variables" /></p>
+<p>Use the Workflow Environment Variables for:</p>
+<ul>
+<li>Fixed variables used throughout the workflow</li>
+<li>Variables the user needs to edit to use the workflow (e.g. setting a custom file path, entering their own API key for a service, etc)</li>
+</ul>
+<p>These variables can be overridden dynamically within a workflow with the <a href="../../utilities/json/index.html">JSON</a> utility object.</p>
+<h3 id="variables">Setting Variables Within a Workflow</h3>
+<p>For more dynamic use of variables, you can set them as you proceed through the objects of your workflow. </p>
+<p>Use the in-workflow variables for:</p>
+<ul>
+<li>Saving the input text query for use later</li>
+<li>Dynamically overriding a fixed variable</li>
+</ul>
+<p>In the same <strong>Simple To-Do List</strong> workflow, the orange object is the first <a href="../../utilities/argument/index.html">Arg and Vars</a> utility, used to store the query you've just typed.</p>
+<p><img src="arg-vars.png" alt="To-do list variable" /></p>
+<p>Further down, the <em>{var:task}</em> variable is used to filter the action to either take the green path where the variable is not empty and the task is added to a list, or the blue path where the variable is empty and the list is opened instead.</p>
+<p>The yellow list filter object also sets an argument (selected from the pre-defined <a href="../../inputs/list-filter/index.html">List Filter</a> options) which is saved as <em>{var:filename}</em> to set the to-do list to which the <em>{var:task}</em> will be added.</p>
+<p>In the <a href="../../outputs/write-file/index.html">Write File</a> green object on the top stream, three variables are used; </p>
+<ul>
+<li>The <em>{var:path}</em> adds the file path set in the Workflow Environment Variables</li>
+<li>The <em>{query}</em> adds the name of the file selected in the yellow List Filter object</li>
+<li>The <em>{var:task}</em> inserts the content; taken from the very first object where I typed the task I wanted to add.</li>
+</ul>
+<p><img src="append-to-file.png" alt="Variables in use in Append To File object" /></p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../overview/index.html">Overview</a>
+        <a href="../../../getting-started/index.html">Getting Started</a>
+        <a href="../../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../../general/index.html">General</a>
+        <a href="../../../features/index.html">Features</a>
+        <a href="../../index.html">Workflows</a>
+        <a href="../../../appearance/index.html">Appearance</a>
+        <a href="../../../advanced/index.html">Advanced</a>
+        <a href="../../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../../powerpack/index.html">Powerpack</a>
+        <a href="../../../update/index.html">Update</a>
+        <hr>
+        <a href="../../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../../recover-license/index.html">Recover License</a>
+        <a href="../../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../../index.html">Support</a></li>
+          <li><a href="../../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../../contact/index.html" class="fimage"><img src="../../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00128s on 3rd Jul 2020 at 16:31 -->
+<!-- served from static cache -->

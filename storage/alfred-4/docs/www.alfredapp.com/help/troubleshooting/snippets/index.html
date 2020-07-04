@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Snippets and Text Expansion Troubleshooting - Alfred Help and Support</title>
+  <meta name="description" content="If you're having issues with snippet auto-expansion using Alfred, take a look">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Troubleshooting</a> &gt; Snippets and Text Expansion</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Snippets and Text Expansion Troubleshooting</h1>
+<p>Alfred's <a href="../../features/snippets/index.html">Snippets and Text Expansion feature</a> is an incredibly useful way to save time by keeping your most used text clips as snippets you can paste with a few characters.</p>
+<ul>
+<li><a href="index.html#no-expansion">My snippets are not expanding</a>: If you've followed <a href="../../features/snippets/auto-expansion/index.html">the steps to activate text expansion</a> but are still not seeing any expansion taking place.</li>
+<li><a href="index.html#partial">My snippets are expanding incorrectly, partially or the keyword isn't disappearing fully</a>.</li>
+<li><a href="index.html#secure-input">I'm seeing a red &quot;preventing text expansion by locking secure entry&quot; error message in the preferences</a></li>
+</ul>
+<hr />
+<h2 id="no-expansion">My snippets aren't expanding at all</h2>
+<h3>1. Activate expansion in Alfred's preferences</h3>
+<p>First, ensure you're <strong>using the latest version of Alfred</strong>. Check by going to the &quot;Update&quot; tab, where you'll be notified if there's a newer version available.</p>
+<p>Launch Alfred's preferences to Features &gt; Snippets and check the box in the top right to <strong>&quot;Automatically expand snippets by keyword&quot;</strong>. </p>
+<p>The &quot;Welcome to Alfred's Text Expansion&quot; pop-up should appear; Follow the steps as described in the <a href="../../features/snippets/index.html#expansion">Text Expansion activation page</a>. </p>
+<p>Take a look at the steps below if the &quot;Alfred Text Service&quot; pop-up doesn't appear.</p>
+<h3>2. Check Accessibility for Alfred</h3>
+<p>In order for Alfred to be able to recognise the keywords for your text snippets, you need to <strong>ensure that Alfred 4 is granted Accessibility access</strong> in your Mac's Security &amp; Privacy preferences, under Accessibility.</p>
+<p>Alfred needs to be listed here <em>and</em> the box next to it must be checked. <strong>If it is already checked, please quit Alfred 4, remove and re-add Alfred 4 to the Accessibility preferences</strong>, then relaunch Alfred. This will ensure that if macOS (particularly macOS Catalina) has corrupted any permissions, this will refresh them.</p>
+<p><img src="snippets-accessibility.png" alt="Alfred granted access to Accessibility" /></p>
+<h3>3. Set Snippets to Expand</h3>
+<p>In your Snippets preferences, <strong>ensure the checkbox next to the specific snippet you want to expand is checked</strong>.</p>
+<p>In the example below, only the top two snippets are set to auto-expand when their keyword is used. The others will not auto-expand when the keyword is typed.</p>
+<p><img src="snippet-enabled-checkbox.png" alt="Enabling auto-expansion for snippets in Alfred 3" /></p>
+<h3>4. Use the correct keyword</h3>
+<p>Are you <strong>using the correct keyword</strong>?</p>
+<p>Check that there are no unexpected spaces in your keyword. In the example below, there are two spaces before the keyword &quot;andrew&quot; and a space before and after &quot;luke&quot;, so the snippet will only expand when typed with these spaces around them.</p>
+<p><img src="snippets-example-spaces.png" alt="Snippet Example with Spaces" /></p>
+<h3 id="secure-input">5. Secure Input may be locked</h3>
+<p><strong>Alfred will show a warning in the Snippets preferences</strong> letting you know that an app <em>&quot;seems to be preventing text expansion by locking secure entry&quot;</em>.</p>
+<p>If you're unable to expand your snippet, check these preferences and quit or re-launch the appropriate app.</p>
+<p><img src="snippets-secure-input.png" alt="Secure Input notice in snippets" /></p>
+<p>The error message usually makes it easy to identify which application has locked secure input. If Alfred reports that &quot;loginwindow seems to be preventing text expansion by locking secure input&quot;, it's likely that Alfred is unable to tell which application is using secure input. </p>
+<p>This can be because macOS itself has left the secure input enabled (e.g. when you've recently logged into your Mac, or after waking your computer and typing your password). This can be resolved by restarting your Mac, or logging out fully and logging back in.</p>
+<p>If the issue occurs frequently, try launching a minimum number of apps/services on your Mac, and re-launching apps one by one, allowing you to establish which app or service is locking secure input by process of elimination. Note that browser plugins (e.g. password managers) can be the cause, so enable plugins one at a time to test them.</p>
+<h3>6. Interference from other applications</h3>
+<p>If you've carefully followed the steps above and are still unable to expand your snippets, another app may be interfering.</p>
+<p>Take a look at any other apps listed in your Mac's preferences under Security &amp; Privacy &gt; Privacy &gt; Accessibility, and remove any non-essential apps.</p>
+<p>You can check whether other apps are interfering by creating a new profile on your Mac temporarily. You can then activate and test out snippets on a fresh account to see if the snippets behaviour is as expected. </p>
+<p>Be sure to try snippet expansion in a simple application like Apple's TextEdit to ensure that the issue isn't caused by the destination app.</p>
+<h3>7. Check Cmd + V is still reserved for pasting the clipboard contents</h3>
+<p>Alfred's Snippets feature relies on the Cmd + V hotkey combination being used for pasting the clipboard contents. If you've changed this hotkey combination to be used for another purpose, snippets won't be pasted.</p>
+<hr />
+<h2 id="partial">My snippets are expanding partially, or the keyword remains</h2>
+<h3>1. Slow down key events</h3>
+<p>If, when expanding your keyword, you find that part of the keyword is still visible, the wrong text is pasted
+or part of the snippet text is deleted, try slowing down the key events.</p>
+<p>You'll find this setting in Alfred's Snippets preferences &gt; Auto Expansion Options &gt; Tweaking. Move the slider to the left to slow down Alfred's actions. We recommend starting with the slowest setting, then bringing it back towards the right until you're seeing predictable behaviour.</p>
+<p><img src="snippets-tweaking-prefs.png" alt="Snippets Tweaking Preferences" /> </p>
+<h3>2. Check for interfering applications</h3>
+<p>If you're using another clipboard, snippet or keyboard manager app, it may be interfering with Alfred's ability to paste correctly (e.g. if two apps use the same snippet keyword and try to expand at the same time). </p>
+<p>Launch Apple's Security &amp; Privacy System Preferences to Privacy &gt; Accessibility, and uncheck all other apps in Accessibility temporarily, and try using your snippets again. Turning them back on one by one will allow you to identify the interfering app.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../../features/index.html">Features</a>
+        <a href="../../workflows/index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00143s on 3rd Jul 2020 at 17:00 -->
+<!-- served from static cache -->

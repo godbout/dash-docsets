@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Web Search, Custom Search &amp; URLs/History - Alfred Help and Support</title>
+  <meta name="description" content="Use web searches and custom searches to get to your favourite websites. Save your URL history in Alfred for quick access to sites you've launched before.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Features</a> &gt; Web Search</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Web Search</h1>
+<p>The Web Search feature makes it easy to quickly launch web searches from Alfred. We provide a wide range of <strong>default web searches</strong> for popular sites from Google and Twitter to Amazon and Wikipedia.</p>
+<p>Want to add a niche site you love? You can add your own <strong>custom searches</strong>. You can also ask Alfred to remember past URLs you've typed with <strong>URLs and History</strong>.</p>
+<p>On this Feature page, you'll find out more about:</p>
+<ul>
+<li><a href="index.html#default">Default Web Searches</a></li>
+<li><a href="index.html#custom">Custom Web Searches</a></li>
+<li><a href="index.html#history">URLs &amp; History</a></li>
+</ul>
+<hr />
+<h2 id="default">Default Web Searches</h2>
+<p>Alfred is great for launching applications on your desktop. But he's also great for helping you search the web much more efficiently than if you were to manually click on a browser icon in your Dock and only then start typing in your search terms.</p>
+<p><img src="web-search-prefs.png" alt="Web Searches" title="Web Searches" /></p>
+<p>To take advantage of this feature, simply start your search with the specified keyword. For example, if you want to search Google Maps, start with &quot;maps&quot; followed by your desired search term.</p>
+<p><img src="web-search-maps.png" alt="Maps search" title="Google Maps search" /></p>
+<p>The default web searches are all https (indicated by the green padlock icon) and include the following sites and services: <em>Google Search, Google's I'm Feeling Lucky, Google Images, Google Maps, Apple Maps, Google Translate, Gmail (Open and search), Google Drive (Open and search), Twitter (Open and search for users or tweets), Wikipedia, Amazon, IMDB, eBay, Bing, Yahoo, Ask, LinkedIn, YouTube, Facebook, Flickr, Wolfram, Yubnub, DuckDuckGo, Weather Underground, Rotten Tomatoes, Pinterest,</em> and finally <em>Alfred Help Site search!</em></p>
+<h3>Modifying default web searches</h3>
+<p>The keywords for your searches are fully customisable. Launch Alfred's preferences to Features &gt; Web Search, double-click on the keyword you wish to change and type in your new preferred keyword.</p>
+<p>Default web searches can't be deleted, so to disable a default search you don't want to see, uncheck the &quot;Enabled&quot; box. </p>
+<hr />
+<h2 id="custom">Custom Searches</h2>
+<p>Custom searches allow you to setup search queries for sites you use regularly, but are not included in Alfred's default searches.</p>
+<p><img src="custom-search-forum.png" alt="Alfred Forum custom search" /></p>
+<h3>Using OpenSearch and SearchAction</h3>
+<p>If you're lucky, the site you want to add a custom search for may support OpenSearch and SearchAction standards, in which case clicking &quot;Lookup&quot; at the right end of your Search URL bar will discover the custom search format for you.</p>
+<h3>Adding a Custom Search URL manually</h3>
+<p>If the site doesn't support the standards above, adding a custom search manually is easy too; Find out the search URL on the site of your choice, then replace the query with {query} in curly brackets. Use the test search to ensure your search works as expected then click &quot;Save&quot; to add your new query.</p>
+<p><img src="custom-search.png" alt="Alfred Forum custom search settings" /></p>
+<h3>Custom Search fields</h3>
+<ul>
+<li><strong>Search URL:</strong> This is where Alfred goes when you use the keyword that you have assigned to this custom search. {query} is what you want to search for in that specific application or website.</li>
+<li><strong>Title:</strong> What is displayed in the results when you use your keyword.</li>
+<li><strong>Keyword:</strong> The keyboard shortcut that you want to use to call up this custom search.</li>
+<li><strong>Encode query using UTF8:</strong> This option helps if you're using non-standard characters. Try ticking it if your query didn't work the first time.</li>
+</ul>
+<p>To hide a custom search you no longer need, either uncheck the &quot;Enabled&quot; box, or select the custom search row and press backspace to delete it.</p>
+<p>For more details, take a look at our <a href="custom-searches/index.html">tutorial on creating your own custom searches</a>.</p>
+<hr />
+<h2 id="history">URLs &amp; History</h2>
+<p>Alfred will recognise URLs when they are typed into the search box, to help you quickly launch websites. Simply type google.co.uk and he'll launch it for you!</p>
+<p>Powerpack users can choose to store and show the history of URLs they've previously pasted into Alfred. This can be enabled under Features &gt; Web Search &gt; URLs / History.</p>
+<p>The URLs will be removed if they're not used for a given period of time, which can be set to 1 week, 1 month, 3 months or a year. You can also clear single items from the list by selecting them and pressing backspace, or fully clear your history by clicking the &quot;Clear&quot; button in the bottom right corner.</p>
+<p><img src="url-history-prefs.png" alt="URLs & History" title="URLs & History" /></p>
+<p>You can search the URLs using the search box in the top right, or sort them by URL or last date accessed by clicking on the column header.</p>
+<blockquote>
+<p><strong>Saving URLs for future use</strong>:</p>
+<p>Need to save URLs or bits of text for a long time? Take a look at <a href="../snippets/index.html">Snippets</a> where you can save text snippets in Alfred for quick access later.</p>
+</blockquote>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../index.html">Features</a>
+        <a href="../../workflows/index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00175s on 3rd Jul 2020 at 17:14 -->
+<!-- served from static cache -->

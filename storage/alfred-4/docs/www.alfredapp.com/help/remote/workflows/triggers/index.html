@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Adding Remote Triggers to your Workflows - Alfred Help and Support</title>
+  <meta name="description" content="Remote Triggers allow you to make your workflow actions available through Remote so that you can control your Mac from your iPad or iPhone.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../../index.html">Help and Support</a> &gt; <a href="../../index.html">Alfred Remote for iOS</a> &gt; <a href="../index.html">Workflows</a> &gt; Adding Remote Triggers to your Workflows</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Adding Remote Triggers to your Workflows</h1>
+<p><a href="../../../workflows/triggers/remote/index.html">Remote Triggers</a> allow you to make your <a href="../../../workflows/index.html">workflow actions</a> available through <a href="../../index.html">Alfred Remote</a> so that you can control your Mac from your iPad or iPhone.</p>
+<ul>
+<li>Learn how to <a href="index.html#add">Add a Remote Trigger to my own workflow</a></li>
+<li>Take a look at <a href="index.html#examples">Workflow Trigger Examples</a></li>
+</ul>
+<hr />
+<h2 id="add">1. Add the Remote Trigger to your workflow</h2>
+<p>Adding a &quot;Remote&quot; trigger object to your workflow will make its associated workflow action available to add in your Remote. This is done in the Workflows tab of Alfred's preferences.</p>
+<p>In the workflow you want to use from Remote, add a Remote object from the + in the top right (Triggers &gt; Remote). Connect it to the appropriate action or actions you want to perform when pressing the button on Remote.</p>
+<p><img src="good-morning-workflow.png" alt="Good Morning workflow" /></p>
+<h2>2. Add the action to your Remote page</h2>
+<p>In the Remote tab, under the &quot;Run Workflow Trigger&quot; action, you'll find the list of workflows containing Remote triggers.</p>
+<p><img src="remote-adding-run-workflow-cropped.png" alt="Adding a Run Workflow object to Remote" /></p>
+<h2>3. Use it in Remote</h2>
+<p>You can now control that workflow from Remote, and the action will be available on your iPhone or iPad Remote.</p>
+<p><img src="good-morning-workflow-remote.png" alt="Good Morning workflow" /></p>
+<hr />
+<h2 id="examples">Workflow Trigger Examples</h2>
+<p>To see a few built-in examples of workflow triggers, go to the Workflows tab in Alfred's preferences. Click the + button at the bottom of your workflows sidebar and choose Examples &gt; Remote Trigger Examples.</p>
+<p><img src="remote-triggers-workflow-prefs.png" alt="Remote Trigger examples in Workflow preferences" /></p>
+<p>This workflow contains three Remote trigger examples. Look at them carefully in the Workflow preferences to learn how they're built.</p>
+<p><img src="remote-triggers-examples.png" alt="Remote Triggers Examples" /></p>
+<h3>1. The &quot;top&quot; trigger</h3>
+<p>In this simple example, the trigger is connected to a Terminal Command. This trigger launches the &quot;top&quot; command in Terminal, showing you the top processes on your Mac.</p>
+<h3>2. The &quot;Dinner Time&quot; trigger</h3>
+<p>This second example runs a script where the text specified as {query} in the Remote object is passed on to two actions; The Run Script object, which reads out the {query} text using your Mac's Text-to-Speech, and the Large Type object, which shows the same query in large type on your screen.</p>
+<p><img src="remote-workflow-dinner-time.png" alt="Remote - Dinner time workflow" /></p>
+<h3>3. The &quot;Movie Checker&quot; trigger</h3>
+<p>This third example is more advanced, and makes use of your macOS Selection to perform its action.</p>
+<p>If you have text selected in macOS, pressing the Movie Checker object in Remote will launch three browser windows with the selected text as {query}.</p>
+<p>For example, if you had highlighted the word &quot;Inception&quot; on your Mac, pressing the Movie Checker object in Remote will launch a YouTube search in Chrome, as well as an IMDB and Rotten Tomatoes search for the keyword in your default browser.</p>
+<hr />
+<h1>Discover and Create Remote workflows</h1>
+<p>On the <a href="../../../workflows/triggers/remote/index.html">Remote Workflow Triggers page</a>, you can also download the <a href="../../../workflows/triggers/remote/index.html">Good Morning workflow</a> as an example.</p>
+<p>You'll find more examples on Packal by searching for the <a href="http://www.packal.org/tags/alfred-remote">&quot;Alfred Remote&quot; tag</a>, and on the <a href="https://alfredforum.com">Alfred Forum</a>, where you'll also be able to get hands-on help with creating your own Remote workflows.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../overview/index.html">Overview</a>
+        <a href="../../../getting-started/index.html">Getting Started</a>
+        <a href="../../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../../general/index.html">General</a>
+        <a href="../../../features/index.html">Features</a>
+        <a href="../../../workflows/index.html">Workflows</a>
+        <a href="../../../appearance/index.html">Appearance</a>
+        <a href="../../../advanced/index.html">Advanced</a>
+        <a href="../../index.html">Remote</a>
+        <hr>
+        <a href="../../../powerpack/index.html">Powerpack</a>
+        <a href="../../../update/index.html">Update</a>
+        <hr>
+        <a href="../../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../../recover-license/index.html">Recover License</a>
+        <a href="../../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../../index.html">Support</a></li>
+          <li><a href="../../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../../contact/index.html" class="fimage"><img src="../../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00122s on 4th Jul 2020 at 05:01 -->
+<!-- served from static cache -->

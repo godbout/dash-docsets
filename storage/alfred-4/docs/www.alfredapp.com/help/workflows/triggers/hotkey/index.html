@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hotkey - Alfred Help and Support</title>
+  <meta name="description" content="Use hotkey triggers to perform actions with workflows without having to type a keyword. No quicker way to launch an action!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../../index.html">Help and Support</a> &gt; <a href="../../index.html">Workflows</a> &gt; <a href="../index.html">Triggers</a> &gt; Hotkey</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Hotkey Triggers</h1>
+<p>Hotkey triggers can be used to perform an action without showing Alfred, or show Alfred with information pre-filled in.</p>
+<p><img src="hotkey-triggers-prefs.png" alt="Hotkey Settings" /></p>
+<hr />
+<h2>Setting your hotkey</h2>
+<h3>Pick a hotkey</h3>
+<p>You can use any hotkey not already reserved by macOS or Alfred. If the hotkey you'd like to use potentially clashes with an existing one in an app you use frequently, take a look at the Related Apps header below.</p>
+<h3>Hotkey action</h3>
+<p>Choose what you want the hotkey to do:</p>
+<ul>
+<li>Pass your {query} through to the workflow it's connected to, or</li>
+<li>Show Alfred</li>
+</ul>
+<h3>Argument</h3>
+<p>The Argument dropdown allows you to choose what information is through to Alfred.</p>
+<ul>
+<li><strong>Selection in macOS</strong> uses the currently selected text or file</li>
+<li><strong>macOS Clipboard Contents</strong> uses the text content of your clipboard</li>
+<li><strong>macOS Find Pasteboard</strong> uses the content of the macOS Pasteboard</li>
+<li><strong>Text</strong> allows you to specify static text to pass through</li>
+<li>Or <strong>None</strong> launches the hotkey without an argument at all</li>
+</ul>
+<p>When choosing to show Alfred with the Clipboard contents, Selection or Pasteboard, you can prefix the argument with a keyword, and choose whether to set the cursor to the right or left. This then allows you to start typing as soon as Alfred is shown.</p>
+<blockquote>
+<h4>What is the Pasteboard?</h4>
+<p>The macOS Pasteboard is a separate clipboard; it can be used by pressing Cmd + E in any native/standard macOS app. Alfred then has access to this secondary pasteboard to use with the Hotkey Trigger, keeping it separate from the usual clipboard. Take a look under Edit &gt; Find &gt; Use Selection For Find in a native app to use it.</p>
+</blockquote>
+<h2>Contextual Hotkeys (Related Apps)</h2>
+<p>You can also specify in which applications you want the hotkey to be applied or ignored.</p>
+<p><img src="hotkey-trigger-related-apps.png" alt="Contextual Hotkeys" /></p>
+<p>Use Alfred to search for the applications you want the hotkey to relate to and drag them into the Related Apps section of the hotkey dropdown sheet.</p>
+<ul>
+<li>Choose &quot;Hotkey is only active when the following apps have focus&quot; to tell Alfred to only make the hotkey active when the apps you've dragged are the current focused apps.</li>
+<li>Choose &quot;don't have focus&quot; to tell Alfred to ignore the hotkey when the apps you've dragged in are in focus.</li>
+</ul>
+<p>This feature makes it possible to use, for example, a hotkey to perform an action in every application except Photoshop, where the hotkey might already have its purpose. </p>
+<blockquote>
+<h4>Using the same hotkey for multiple actions</h4>
+<p>The same hotkey can be used more than once, allowing you to set a different action to be performed depending which app is in focus. You can copy and paste the hotkey trigger on the canvas, which retains the hotkey you've set.</p>
+</blockquote>
+<h3>Focused App Variable</h3>
+<p>Want to create a workflow that performs a different action depending on which app is in focus when the hotkey is triggered? Check the box for &quot;Focused App Variable&quot; to pass the app name through to your workflow.</p>
+<p>To see this concept in action, add the &quot;Advanced Hotkeys&quot; workflow example from the Getting Started menu in the Workflows preferences.</p>
+<p><img src="hotkeys-focused-app-variable.png" alt="Configuring focused app variables" /></p>
+<p>Want to learn more about workflow variables? Take a look at the <a href="../../advanced/variables/index.html">guide on setting variables in workflows</a>.</p>
+<h2>Example workflows using hotkeys</h2>
+<p>You can find two built-in hotkey workflows in Alfred's Workflows preferences.</p>
+<p>Click the [+] in the bottom left of the Workflows preferences. Under Getting Started, you'll find:</p>
+<ul>
+<li><strong>Hotkeys</strong>: A simple hotkeys workflow, demonstrating how to set a hotkey trigger to launch one or more files/apps.</li>
+<li><strong>Advanced Hotkeys</strong>: A workflow showing you how to use one hotkey to perform multiple different actions, depending on the active application when the hotkey is triggered.</li>
+</ul>
+<p>You'll also find template workflows which use hotkeys under the <strong>Templates</strong> sub-menu.</p>
+<hr />
+<h2 id="tips">Tips for working with hotkeys</h2>
+<p>If you're having any issues with hotkeys, take a look at the <a href="../../../troubleshooting/workflows/index.html#hotkeys">Hotkey Troubleshooting</a> for frequently asked questions and tips.</p>
+<h3>How can I make global hotkeys faster?</h3>
+<p>To ensure that hotkeys always work smoothly on your Mac, Alfred waits a few milliseconds before letting the modifier keys (alt, cmd, ctrl) go before performing the action associated to your hotkey combination.</p>
+<p>If you want to speed this up, you can change the trigger behaviour to pass the modifier keys through and give you faster hotkeys. Click the green icon to the right of the hotkey field to change this.</p>
+<p><img src="hotkey-modifiers.png" alt="Faster hotkeys" /></p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../overview/index.html">Overview</a>
+        <a href="../../../getting-started/index.html">Getting Started</a>
+        <a href="../../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../../general/index.html">General</a>
+        <a href="../../../features/index.html">Features</a>
+        <a href="../../index.html">Workflows</a>
+        <a href="../../../appearance/index.html">Appearance</a>
+        <a href="../../../advanced/index.html">Advanced</a>
+        <a href="../../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../../powerpack/index.html">Powerpack</a>
+        <a href="../../../update/index.html">Update</a>
+        <hr>
+        <a href="../../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../../recover-license/index.html">Recover License</a>
+        <a href="../../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../../index.html">Support</a></li>
+          <li><a href="../../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../../contact/index.html" class="fimage"><img src="../../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00187s on 3rd Jul 2020 at 16:37 -->
+<!-- served from static cache -->

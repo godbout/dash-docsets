@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>File Search - Alfred Help and Support</title>
+  <meta name="description" content="Searching files, navigating through your file system and taking action on your files.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Features</a> &gt; File Search</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>File Search</h1>
+<p>File Search is an essential part of Alfred's search functionality. It allows you to expand your search, navigate your Mac's directories and take action on files you find.</p>
+<p>On this Feature page, you'll find out more about:</p>
+<ul>
+<li><a href="index.html#file-search">File Search</a></li>
+<li><a href="index.html#file-nav">File Navigation</a></li>
+<li><a href="index.html#file-buffer">File Buffer</a></li>
+<li><a href="index.html#recent-docs">Recent Documents</a></li>
+</ul>
+<blockquote>
+<p>Looking for File Actions? They've moved in the Alfred 4 preferences, so <a href="../actions/index.html">you'll find the Actions documentation here instead</a>. <a href="../previews/index.html">QuickLook and Previews</a> have also been moved out of the File Search prefs.</p>
+</blockquote>
+<hr />
+<h2 id="file-search">File Search</h2>
+<p>Alfred's <a href="../default-results/index.html" title="Default Results">Default Results</a> include the most essential file types; Applications, System Preferences, Contacts, and any file types you've added.</p>
+<p>When you need to expand your search scope beyond these core file types included in Alfred's results, the File Search keywords are here to help you.</p>
+<ul>
+<li>Use the <strong><em>&quot;open&quot;</em></strong> keyword to open a file (or press the spacebar as a shortcut!)</li>
+<li>Use the <strong><em>&quot;find&quot;</em></strong> keyword to reveal the file in Finder</li>
+<li>Use the <strong><em>&quot;in&quot;</em></strong> keyword to search inside your files' content</li>
+</ul>
+<p><img src="file-search-example.png" alt="File Search" title="File Search example" /></p>
+<p>You can customise these keywords in the <strong>Features &gt; File Search</strong> preferences.</p>
+<p>You can also choose which file types Alfred should <strong>not</strong> show in the results, and how many results Alfred should present.</p>
+<p>If you're a Powerpack user, take a look at <a href="../../workflows/inputs/file-filter/index.html">File Filters</a> to create custom search filters based on file types or search scope, making your searches even more efficient.</p>
+<hr />
+<h2 id="file-nav">File Navigation</h2>
+<p>Use Alfred to navigate through your Mac's file system. This is a great way to quickly make your way through folders without having to use the mouse.</p>
+<p>To start, type:</p>
+<ul>
+<li><strong>/</strong> (slash) to take you to the root folder on your Mac, or</li>
+<li><strong>~</strong> (tilde) to go to your user directory.</li>
+</ul>
+<p>From here, start typing the first few characters of the next folder or file you want Alfred to narrow his search to or use the arrow keys to go down to the folder you need. </p>
+<p>Not sure of the file name? Add a * (star) to the start of your search term to make it into <a href="searching-with-wildcards/index.html" title="Wildcard">a wildcard</a>.</p>
+<p><img src="file-navigation.png" alt="File Navigation" title="File Navigation" /></p>
+
+<p>You can tweak which keys are used to navigate through and open folders in File Navigation in the Features &gt; File Search &gt; Navigation preferences.</p>
+<h3>Sorting Preferences and Order</h3>
+<p>Using the cog in bottom right of the File Navigation window, you can customise the sorting by Name, Creation Date or Last Modified Date, and whether you want to show folders at the top. </p>
+<p>You can set the order to ascending or descending either in the cog preferences, or by clicking the arrow next to it to swap the order.</p>
+<p><strong>⌘</strong> + <strong>Shift</strong> + <strong>I</strong> can be used to show and hide the preview on the right side.</p>
+<p><img src="file-nav-sorting.png" alt="File Navigation Sorting Preferences" /></p>
+<hr />
+<h2 id="file-buffer">File Buffer</h2>
+<p>The File Buffer allows you to select multiple files and add them to a buffer. You can then take action on all of these files at once!</p>
+<p><img src="file-buffer-5items.png" alt="File buffer" title="File Buffer" /></p>
+<p>The buffer is controlled by using the ⌥ (Alt) key in combination with the selected file in Alfred's results.</p>
+<ul>
+<li>⌥↑ to add a file to the buffer from Alfred's results</li>
+<li>⌥↓ to add a file and move to the next item in your list of results</li>
+<li>⌥← to remove the last item from the buffer</li>
+<li>⌥→ to action all items in the buffer</li>
+<li>⌥ <strong>backspace</strong> to remove all items from the buffer</li>
+</ul>
+<p>You'll see an upwards arrow identifying the files you've already added to the buffer.</p>
+<p><img src="file-buffer-icon.png" alt="image" /></p>
+<p>You can also see additional information about the particular file, as well as a cheatsheet of the key combinations when hovering over the files.</p>
+<p><img src="file-buffer-hover.png" alt="image" /></p>
+<p>You can modify some of the preferences in Alfred's Preferences under Features &gt; File Search &gt; Buffer.</p>
+<p>Want to take action on multiple files at once without first popping Alfred up? Select them in Finder and press the Finder Selection hotkey (which is ⌥⌘\ by default) to bring up <a href="../actions/index.html">the Actions panel</a>.</p>
+<h2 id="recent-docs">Recent Documents</h2>
+<p>The Recent Documents feature helps you locate the files you've opened last in a particular application. </p>
+<p>Search for the application you're looking for and press the right arrow to show the list of file actions for your app. You'll then see the list of available file actions for it; Recent Documents will be at the top of the list. Press the Return key to see your latest documents.</p>
+<p><img src="recent-docs.png" alt="Recent Documents" title="Recent Documents" /></p>
+<p><em>Known issue: this feature is not fully compatible with Microsoft Office and some other non-Cocoa (non-native macOS) applications. In these cases, only files opened with Alfred will appear in results due to the limitation of the third party software.</em></p>
+<hr />
+<h2>Learning more about file search</h2>
+<p>Want to do even more with file search? </p>
+<ul>
+<li><a href="../../workflows/inputs/file-filter/index.html">Use File Filter workflows to focus your search to file types and search scopes you need</a></li>
+<li><a href="tagging-files/index.html">Use Tags to give your files labels/nicknames and search using those tags</a></li>
+</ul>
+<p>You can also take a look at the <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a> for more ways to be productive when searching your Mac.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../index.html">Features</a>
+        <a href="../../workflows/index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00141s on 3rd Jul 2020 at 16:18 -->
+<!-- served from static cache -->
