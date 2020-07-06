@@ -22,3 +22,4 @@ ___
 * ~~[Stripe API](https://stripe.com/docs/api)~~ — [DECEASED](https://github.com/godbout/dash-docset-builder/tree/stripe-api/storage/stripe-api)
 * [Ploi API](https://developers.ploi.io/)
 * [Bulma](https://https://bulma.io/)
+* [Alfred 4](https://www.alfredapp.com/)
