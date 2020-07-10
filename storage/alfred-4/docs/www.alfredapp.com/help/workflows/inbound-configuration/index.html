@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workflow Object Inbound Configuration - Alfred Help and Support</title>
+  <meta name="description" content="Direct external access to objects throughout a workflow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" href="../../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <style>
+    @import url('../../../../fonts.googleapis.com/css%3Ffamily=Bitter:400,700.css');
+    @import url('../../../styles/style.css%3Fver=5.8.css');
+  </style>
+</head>
+
+<body id="helppage">
+  
+  <!-- Navigation -->
+  <nav id="mainnav">
+    <div class="content">
+      <a href="https://www.alfredapp.com/" id="home">Alfred</a>
+      
+      <div id="menu">
+        <a href="https://www.alfredapp.com/powerpack/" id="navpowerpack">Powerpack</a>
+        <a href="https://www.alfredapp.com/remote/">Remote</a>
+        <a href="https://www.alfredapp.com/workflows/" id="navworkflows">Workflows</a>
+        <a href="http://www.alfredforum.com/" id="navforum">Forum</a>
+        <a href="https://www.alfredapp.com/blog/">Blog</a>
+        <a href="../../index.html">Help</a>
+        <a href="https://www.alfredapp.com/search/" id="navsearch">Search</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav id="subnav">
+    <div class="content">
+      <form action="https://www.alfredapp.com/search/" method="get">
+        <input name="p" type="hidden" value="help">
+        <input name="q" type="text" placeholder="Search Help..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <div id="breadcrumbs"><a href="../../index.html">Help and Support</a> &gt; <a href="../index.html">Workflows</a> &gt; Workflow Object Inbound Configuration</div>
+    </div>
+  </nav>
+
+  <section id="helpcontent">
+    <div class="content">
+  
+      <article id="helparticle">
+        
+<h1>Workflow Object Inbound Configuration</h1>
+<p><span class="hotkey">New in Alfred 4.1</span></p>
+<p>It is now possible to set an external identifier directly on a workflow object in place of using an <a href="../triggers/external/index.html">External Trigger</a> object connected to your object.</p>
+<p>This not only adds convenience and flexibility, but also provides a way to tweak the behaviour of Alfred's input field for input objects.</p>
+<p>The &quot;Inbound Configuration...&quot; is available from the contextual popup menu for the selected object in Alfred's workflow editor.</p>
+<p><img src="inbound-configuration.png" alt="Inbound Configuration" /></p>
+<p>When you set an External Identifier directly on an object, you can access that object in the same way as the <a href="../triggers/external/index.html">External Trigger</a> object, either via AppleScript, or using the <a href="../outputs/call-external-trigger/index.html">Call External</a> output object.</p>
+<p>Objects with an External Identifier set have a small turquoise hint on the input of the object in Alfred's Workflow Editor.</p>
+<h2>Inbound Mode</h2>
+<p>For Input objects, the Inbound Mode option is enabled, and can be set to either Direct or Keyword. This mode affects both input via AppleScript or the External Trigger, and also workflow connected inputs.</p>
+<h3>Direct Mode</h3>
+<p>This is the default behaviour, and how Alfred operated before 4.1. You'll see the input's icon to the right hand side of Alfred's window, and the input box is directly related to your specific input.</p>
+<h3>Keyword Mode</h3>
+<p>This mode essentially operates the same as if you had manually typed the keyword, selected the result to make it unique, then typed the argument. Alfred's window is in a context where you would be able to delete back past the keyword and return to Alfred's default results.</p>
+<p>One advantage of keyword mode is that it will be remembered in Alfred's short term history.</p>
+  
+      </article>
+      
+      <nav id="helpmenu">
+        <a href="../../index.html">Home</a>
+        <a href="../../overview/index.html">Overview</a>
+        <a href="../../getting-started/index.html">Getting Started</a>
+        <a href="../../guides-and-tutorials/index.html">Guides and Tutorials</a>
+        <hr>
+        <a href="../../general/index.html">General</a>
+        <a href="../../features/index.html">Features</a>
+        <a href="../index.html">Workflows</a>
+        <a href="../../appearance/index.html">Appearance</a>
+        <a href="../../advanced/index.html">Advanced</a>
+        <a href="../../remote/index.html">Remote</a>
+        <hr>
+        <a href="../../powerpack/index.html">Powerpack</a>
+        <a href="../../update/index.html">Update</a>
+        <hr>
+        <a href="../../troubleshooting/index.html">Troubleshooting</a>
+        <a href="../../recover-license/index.html">Recover License</a>
+        <a href="../../report-a-bug/index.html">Report a Bug</a>
+        <hr>
+        <a href="../../contact/index.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </section>
+  
+  <section id="latestblogpost">
+    <div class="content">
+      <h2>Latest Blog Post:</h2>
+      <p><a href="https://www.alfredapp.com/blog/releases/alfred-4-1-embedded-snippets/">Alfred 4.1 Released: Embedded Snippets, Shared Hotkeys and Lots of Love for Workflows</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="content">
+      
+      <div>
+        <h3>Alfred</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/#download">Download Alfred</a></li>
+          <li><a href="https://www.alfredapp.com/powerpack/">Alfred Powerpack</a></li>
+          <li><a href="https://www.alfredapp.com/remote/">Alfred Remote</a></li>
+          <li><a href="https://www.alfredapp.com/workflows/">Workflows</a></li>
+          <li><a href="https://www.alfredapp.com/changelog/">Change Log</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../../index.html">Support</a></li>
+          <li><a href="../../getting-started/index.html">Getting Started</a></li>
+          <li><a href="../../guides-and-tutorials/index.html">Tutorials</a></li>
+          <li><a href="https://www.alfredapp.com/labs/">Labs</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://www.alfredapp.com/blog/">Our Blog</a></li>
+          <li><a href="https://www.alfredapp.com/testimonials/">Testimonials</a></li>
+          <li><a href="http://alfredforum.com/">Forum</a></li>
+          <li><a href="../../kb/buy-goodies-and-stickers/index.html">Buy Goodies</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://twitter.com/alfredapp" class="fimage"><img src="../../../media/logos/Twitter.svg" alt="Twitter Logo">Twitter</a></li>
+          <li><a href="https://www.facebook.com/alfredapp" class="fimage"><img src="../../../media/logos/Facebook.svg" alt="Facebook Logo">Facebook</a></li>
+          <li><a href="https://www.alfredapp.com/about/" class="fimage"><img src="../../../media/logos/Person.svg" alt="About Logo">About Us</a></li>
+          <li><a href="../../contact/index.html" class="fimage"><img src="../../../media/logos/Contact.svg" alt="Contact ">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div id="newsletter">
+        <h3>Newsletter</h3>
+        <form action="https://alfredapp.createsend.com/t/y/s/hukjlh/" method="post" id="subform">
+          <input name="cm-hukjlh-hukjlh" type="email" placeholder="Enter your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up for updates, tips and sneak peeks. <a href="https://www.alfredapp.com/terms/" class="terms">Privacy Policy</a>.</p>
+      </div>
+      
+    </div>
+    
+  </footer>
+
+  <div id="footermeta">  
+    <div class="content">
+
+        <div id="thanks">
+          <a href="http://www.cachefly.com/"><img src="../../../media/cachefly.png" alt="CacheFly" id="cachefly"></a>
+          <a href="https://www.campaignmonitor.com"><img src="../../../media/campaignmonitor.png" alt="Campaign Monitor" id="campaignmonitor"></a>
+        </div>
+        
+        <div id="terms">
+          <p>
+            "Alfred" is a registered trademark of Running with Crayons Ltd.
+            &copy;2020 Running with Crayons Ltd. All rights reserved.
+          </p>
+          <p><a href="https://www.alfredapp.com/terms/">Terms & Conditions, Privacy Policy, Cookies.</a></p>
+        </div>
+        
+    </div>
+  </div>
+  
+  <!-- Javascript Functions -->
+  <script src="../../../scripts/functions.js%3Fver=1.3" defer></script>
+  
+  <!-- Anonymised Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-183491-24', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
+<!-- generated in 0.00084s on 10th Jul 2020 at 14:15 -->
+<!-- served from static cache -->

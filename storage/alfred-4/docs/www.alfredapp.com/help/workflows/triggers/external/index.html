@@ -52,23 +52,30 @@
       <article id="helparticle">
         
 <h1>External Triggers</h1>
-<p>External Triggers give you a way to use AppleScript from an external source to tell Alfred what to do. For example, your external application could use this external trigger to tell Alfred to display text using the Large Type display or using notifications.</p>
+<p>External triggers provides you with external access to specified points throughout your workflow. These can be accessed externally using AppleScript, or within a workflow using the <a href="../../outputs/call-external-trigger/index.html">Call External</a> trigger object.</p>
+<p>This is useful if you'd like to integrate workflows into your scripting outside of Alfred, and can also provide a way of calling between workflows.</p>
+<p><span class="hotkey">New in Alfred 4.1</span></p>
+<p>It is now also possible to add an External Identifier directly to a workflow object using <a href="../../inbound-configuration/index.html">Inbound Configuration</a>. Setting an external identifier on an object will behave the same as using an external trigger, and also provides some additional configuration options.</p>
 <hr />
 <h2>Getting your sample AppleScript</h2>
 <p>Once you've added an External Trigger object to your workflow, double-click it to show the dropdown sheet. Enter the identifier used to uniquely access this trigger using AppleScript outside Alfred.</p>
-<p><img src="workflow-config-trigger-sample-code.png" alt="Sample code" /></p>
+<p><img src="workflow-config-trigger-eat-bananas.png" alt="Sample code" /></p>
+<p>In this example, the workflow has a Bundle ID of <code>com.alfredapp.andrew.bananas</code> and External Trigger ID of <code>eat</code>, the AppleScript to access this externally is:</p>
+<blockquote>
+<p>tell application id &quot;com.runningwithcrayons.Alfred&quot; to run trigger &quot;eat&quot; in workflow &quot;com.alfredapp.andrew.bananas&quot; with argument &quot;test&quot;</p>
+</blockquote>
 <h2>Why am I seeing a bundle ID error?</h2>
 <p>Before your sample code can be generated, you'll need to make sure your workflow has a bundle ID - otherwise you'll see this error message.</p>
 <p>To add a bundle ID, double-click on the workflow name in the left sidebar. Fill in the bundle ID and save to make the error disappear.</p>
 <p><img src="workflow-config-trigger-bundleid-error.png" alt="Bundle ID error" /></p>
-<p>A good bundle ID format is com.yourname.workflowname (e.g. com.andrew.workflowname) but so long as you fill something unique in, you'll be fine.</p>
+<p>A good bundle ID format is <code>com.domain.yourname.workflowname</code> (for example: com.alfredapp.andrew.bananas) but so long as you fill something unique in, you'll be fine.</p>
 <h2>Error Codes for External Triggers</h2>
 <p>When calling an external trigger from AppleScript, if an error occurs, the following error codes are output:</p>
 <ul>
-<li>Unknown Error: -1</li>
-<li>Workflow Not Found: -2</li>
-<li>Trigger Not Found: -3</li>
-<li>Workflow Disabled: -4</li>
+<li>Unknown Error: <code>-1</code></li>
+<li>Workflow Not Found: <code>-2</code></li>
+<li>Trigger Not Found: <code>-3</code></li>
+<li>Workflow Disabled: <code>-4</code></li>
 </ul>
   
       </article>
@@ -102,7 +109,7 @@
   <section id="latestblogpost">
     <div class="content">
       <h2>Latest Blog Post:</h2>
-      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+      <p><a href="https://www.alfredapp.com/blog/releases/alfred-4-1-embedded-snippets/">Alfred 4.1 Released: Embedded Snippets, Shared Hotkeys and Lots of Love for Workflows</a></p>
     </div>
   </section>
 
@@ -200,5 +207,5 @@
 </body>
 
 </html>
-<!-- generated in 0.00105s on 4th Jul 2020 at 05:05 -->
+<!-- generated in 0.00133s on 10th Jul 2020 at 14:18 -->
 <!-- served from static cache -->

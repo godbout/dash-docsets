@@ -57,7 +57,7 @@
 <hr />
 <h2>Setting your hotkey</h2>
 <h3>Pick a hotkey</h3>
-<p>You can use any hotkey not already reserved by macOS or Alfred. If the hotkey you'd like to use potentially clashes with an existing one in an app you use frequently, take a look at the Related Apps header below.</p>
+<p>You can use any hotkey not already reserved by macOS. If the hotkey you'd like to use potentially clashes with an existing one in Alfred, or an app you use frequently, take a look at the <a href="index.html#related-apps">Related Apps</a> section below.</p>
 <h3>Hotkey action</h3>
 <p>Choose what you want the hotkey to do:</p>
 <ul>
@@ -78,18 +78,18 @@
 <h4>What is the Pasteboard?</h4>
 <p>The macOS Pasteboard is a separate clipboard; it can be used by pressing Cmd + E in any native/standard macOS app. Alfred then has access to this secondary pasteboard to use with the Hotkey Trigger, keeping it separate from the usual clipboard. Take a look under Edit &gt; Find &gt; Use Selection For Find in a native app to use it.</p>
 </blockquote>
-<h2>Contextual Hotkeys (Related Apps)</h2>
+<h2 id="related-apps">Contextual Hotkeys (Related Apps)</h2>
 <p>You can also specify in which applications you want the hotkey to be applied or ignored.</p>
+<p><span class="hotkey">New in Alfred 4.1</span> It's possible to <a href="index.html#sharing-hotkeys">share hotkeys between multiple workflow triggers</a>, and careful use of Related Apps will give you a seamless experience.</p>
 <p><img src="hotkey-trigger-related-apps.png" alt="Contextual Hotkeys" /></p>
 <p>Use Alfred to search for the applications you want the hotkey to relate to and drag them into the Related Apps section of the hotkey dropdown sheet.</p>
 <ul>
 <li>Choose &quot;Hotkey is only active when the following apps have focus&quot; to tell Alfred to only make the hotkey active when the apps you've dragged are the current focused apps.</li>
 <li>Choose &quot;don't have focus&quot; to tell Alfred to ignore the hotkey when the apps you've dragged in are in focus.</li>
 </ul>
-<p>This feature makes it possible to use, for example, a hotkey to perform an action in every application except Photoshop, where the hotkey might already have its purpose. </p>
+<p>This feature makes it possible to use, for example, a hotkey to perform an action in every application except Photoshop, where the hotkey might already have its purpose.</p>
 <blockquote>
-<h4>Using the same hotkey for multiple actions</h4>
-<p>The same hotkey can be used more than once, allowing you to set a different action to be performed depending which app is in focus. You can copy and paste the hotkey trigger on the canvas, which retains the hotkey you've set.</p>
+<p>Note: The Related app's icons are shown on the Hotkey Trigger in the Workflow canvas. From Alfred 4.1, if the context is set to &quot;don't have focus&quot;, there is a darker background hint behind the application icons.</p>
 </blockquote>
 <h3>Focused App Variable</h3>
 <p>Want to create a workflow that performs a different action depending on which app is in focus when the hotkey is triggered? Check the box for &quot;Focused App Variable&quot; to pass the app name through to your workflow.</p>
@@ -107,10 +107,23 @@
 <hr />
 <h2 id="tips">Tips for working with hotkeys</h2>
 <p>If you're having any issues with hotkeys, take a look at the <a href="../../../troubleshooting/workflows/index.html#hotkeys">Hotkey Troubleshooting</a> for frequently asked questions and tips.</p>
-<h3>How can I make global hotkeys faster?</h3>
+<h3 id="faster-hotkeys">How can I make global hotkeys faster?</h3>
 <p>To ensure that hotkeys always work smoothly on your Mac, Alfred waits a few milliseconds before letting the modifier keys (alt, cmd, ctrl) go before performing the action associated to your hotkey combination.</p>
-<p>If you want to speed this up, you can change the trigger behaviour to pass the modifier keys through and give you faster hotkeys. Click the green icon to the right of the hotkey field to change this.</p>
 <p><img src="hotkey-modifiers.png" alt="Faster hotkeys" /></p>
+<p>If you want to speed this up, you can change the trigger behaviour to pass the modifier keys through and give you faster hotkeys. Click the green icon to the right of the hotkey field to change this.</p>
+<h3 id="sharing-hotkeys">Sharing hotkeys between multiple Hotkey Triggers</h3>
+<p><span class="hotkey">New in Alfred 4.1</span></p>
+<p>It's possible to share hotkeys between workflow triggers, and with careful use of the Hotkey's <a href="index.html#related-apps">Related Apps</a> feature, you can use a single hotkey combo to trigger many different features based on the currently focused app in macOS.</p>
+<p>Alfred uses a simple algorithm to decide which hotkey trigger to run, with this order of precedence:</p>
+<ol>
+<li>If the hotkey is set to be active when an app is focused, this takes highest priority</li>
+<li>If a hotkey is set to be active when an app does not have focus, this takes second priority</li>
+<li>If a hotkey doesn't match 1 or 2, and has no Related Apps set, then this takes third priority</li>
+</ol>
+<p>Alfred highlights any shared Hotkey Triggers in the workflow editor with an orange background to the hotkey combo.</p>
+<blockquote>
+<p>Note that Alfred won't prevent you from configuring conflicting hotkeys, allowing for easier transient editing. It is your responsibility to correctly configure hotkeys for the behaviour you desire.</p>
+</blockquote>
   
       </article>
       
@@ -143,7 +156,7 @@
   <section id="latestblogpost">
     <div class="content">
       <h2>Latest Blog Post:</h2>
-      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+      <p><a href="https://www.alfredapp.com/blog/releases/alfred-4-1-embedded-snippets/">Alfred 4.1 Released: Embedded Snippets, Shared Hotkeys and Lots of Love for Workflows</a></p>
     </div>
   </section>
 
@@ -241,5 +254,5 @@
 </body>
 
 </html>
-<!-- generated in 0.00187s on 3rd Jul 2020 at 16:37 -->
+<!-- generated in 0.00147s on 10th Jul 2020 at 14:01 -->
 <!-- served from static cache -->

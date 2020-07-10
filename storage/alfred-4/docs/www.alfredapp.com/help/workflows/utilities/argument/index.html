@@ -54,19 +54,24 @@
 <h1>Argument and Variables Utility</h1>
 <p>This versatile utility allows you to make two types of changes to the input from the previous object; Use Argument to modify the input before outputting it, and use variables to store the input for use later in your workflow.</p>
 <hr />
-<h2>Using Arguments and Variables</h2>
-<h3>Arguments</h3>
+<h2>Argument</h2>
 <p>The Argument utility allows you to modify the input from the previous object. By default, the argument box will contain {query}, which is the input. </p>
 <p>In this example, I've simply added a dash in front of it, so that it can be added to a to-do list and look like a list item.</p>
-<p><img src="argument.png" alt="Argument" /></p>
-<p>Not using the Argument? Leave the box blank.</p>
-<h3>Variables</h3>
+<p><img src="argument-and-pass-through.png" alt="Argument and Pass Through" /></p>
+<p>The argument passed out of this object will always be a string as represented by the contents of the text box. For example, if you'd like to clear out the argument, leave this text box empty.</p>
+<h3>Pass Through Input Argument</h3>
+<p><span class="hotkey">New in Alfred 4.1</span></p>
+<p>You may want to simply add variables using this object, and pass through the input object untouched. For this, select the option to &quot;Pass through input Argument&quot;.</p>
+<p>This is useful if, for example, you have a list of files which you would like to keep as a list, and not convert to a string output using the {query} placeholder.</p>
+<hr />
+<h2>Variables</h2>
 <p>Variables add incredible flexibility to workflows, allowing you to store multiple inputs to use later, or to set defaults which can be dynamically overridden.</p>
 <p>In this example, I've set two variables; The first variable named <em>task</em> will save the {query} input, allowing me to re-use it later in the workflow with {var:task}; <em>var</em> stands for variable, and <em>task</em> is the name of the variable I created.</p>
 <p>The second variable, <em>todo</em>, is set with a fixed variable called <em>home</em>. You can use it in your workflow by adding {var:todo}.</p>
 <p><img src="variable.png" alt="Variables" /></p>
 <p>Need to find out more about variables? Take a look at our <a href="../../advanced/variables/index.html">guide to using variables</a> in workflows.</p>
-<h3>Including Dynamic Placeholders and Transforms</h3>
+<hr />
+<h2>Including Dynamic Placeholders and Transforms</h2>
 <p>You can add dynamic placeholders and transforms, so that you can include the date, time, as well as clipboard items to your variables. </p>
 <p>Take a look at the <a href="../../advanced/placeholders/index.html">Dynamic Placeholders page</a> for more details on using the placeholders and transforms.</p>
 <hr />
@@ -106,7 +111,7 @@
   <section id="latestblogpost">
     <div class="content">
       <h2>Latest Blog Post:</h2>
-      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+      <p><a href="https://www.alfredapp.com/blog/releases/alfred-4-1-embedded-snippets/">Alfred 4.1 Released: Embedded Snippets, Shared Hotkeys and Lots of Love for Workflows</a></p>
     </div>
   </section>
 
@@ -204,5 +209,5 @@
 </body>
 
 </html>
-<!-- generated in 0.00102s on 3rd Jul 2020 at 17:05 -->
+<!-- generated in 0.00136s on 10th Jul 2020 at 14:46 -->
 <!-- served from static cache -->

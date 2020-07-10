@@ -65,6 +65,7 @@
 <li><a href="index.html#variables">Using Variables</a></li>
 <li><a href="index.html#modifiers">Transform Modifiers</a></li>
 <li><a href="index.html#cursor">Cursor Position</a></li>
+<li><a href="index.html#snippets">Snippets</a></li>
 </ul>
 <h3>Advanced Placeholders</h3>
 <ul>
@@ -177,8 +178,14 @@ Third: <em><a href="https://en.wikipedia.org/wiki/Hedgehog">https://en.wikipedia
 </ul>
 <hr />
 <h2 id="cursor">Cursor Position</h2>
-<p>Once you've written your snippet text, you can tell Alfred where you'd like him to position the cursor once the content has been pasted.</p>
+<p>Once you have your text content, you can tell Alfred where you'd like him to position the cursor once the content has been pasted.</p>
 <p>Use <code>{cursor}</code> to set the position within your snippet.</p>
+<hr />
+<h2 id="snippets">Snippets</h2>
+<p><span class="hotkey">New in Alfred 4.1</span></p>
+<p>You can insert the content of your snippets using the <code>{snippet:}</code> placeholder. Snippets are found and inserted by (resolved) keyword, so if your collection has a prefix of <code>!</code> and your snippet has a keyword of <code>sig</code>, then use <code>{snippet:!sig}</code>. Note that <a href="../../../features/snippets/index.html">Alfred's Snippets</a> preferences shows resolved keywords in the keyword column of the snippets table.</p>
+<p>If your current text content is rich text, and the snippet you are including is rich text, then the rich text of the snippet is retained.</p>
+<p>Note that Alfred does not recursively embed snippets, so if the snippet you are including also contains a <code>{snippet:}</code> placeholder, then this secondary placeholder will not be resolved.</p>
 <hr />
 <h2 id="order">Order of operations for Replacement of Dynamic Placeholders</h2>
 <p>If you're using different types of placeholder replacement in your <a href="../../index.html">workflows</a>, keep in mind the order of replacement for these placeholders:</p>
@@ -220,7 +227,7 @@ Third: <em><a href="https://en.wikipedia.org/wiki/Hedgehog">https://en.wikipedia
   <section id="latestblogpost">
     <div class="content">
       <h2>Latest Blog Post:</h2>
-      <p><a href="https://www.alfredapp.com/blog/tips-and-tricks/flip-everything/">Table Flip Everything: A simple workflow to turn the world upside down</a></p>
+      <p><a href="https://www.alfredapp.com/blog/releases/alfred-4-1-embedded-snippets/">Alfred 4.1 Released: Embedded Snippets, Shared Hotkeys and Lots of Love for Workflows</a></p>
     </div>
   </section>
 
@@ -318,5 +325,5 @@ Third: <em><a href="https://en.wikipedia.org/wiki/Hedgehog">https://en.wikipedia
 </body>
 
 </html>
-<!-- generated in 0.00493s on 3rd Jul 2020 at 16:49 -->
+<!-- generated in 0.0028s on 10th Jul 2020 at 14:09 -->
 <!-- served from static cache -->
