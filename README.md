@@ -12,7 +12,7 @@
 
 ___
 
-## Docsets are grown-ups now and have moved out!
+## Docsets are all grown-ups now and they moved out!
 
 the number of Docsets is increasing and running the tests for all is now slow and dumb. so they all have their own cocoon now:
 
@@ -21,8 +21,9 @@ the number of Docsets is increasing and running the tests for all is now slow an
 * [Jigsaw by Tighten](https://github.com/godbout/jigsaw-dash-docset)
 * [Tailwind CSS](https://github.com/godbout/tailwindcss-dash-docset)
 * [Tiki](https://github.com/godbout/tiki-dash-docset)
-* ~~[Stripe](*https://github.com/godbout/dash-docset-builder/tree/stripe/storage/stripe)~~ — **DECEASED**
+* ~~[Stripe](https://github.com/godbout/dash-docset-builder/tree/stripe/storage/stripe)~~ — **DECEASED**
 * ~~[Stripe API](https://github.com/godbout/dash-docset-builder/tree/stripe-api/storage/stripe-api)~~ — **DECEASED**
 * [Ploi API](https://github.com/godbout/ploi-api-dash-docset)
 * [Bulma](https://github.com/godbout/bulma-dash-docset)
 * [Alfred 4](https://github.com/godbout/alfred-dash-docset)
+* [Chart.js](https://github.com/godbout/chartjs-dash-docset)
