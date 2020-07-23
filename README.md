@@ -12,14 +12,17 @@
 
 ___
 
-## Docsets born here, sorted by eldest first
+## Docsets are grown-ups now and have moved out!
 
-* [Laravel-Zero](https://laravel-zero.com/docs/introduction/)
-* [Jigsaw by Tighten](https://jigsaw.tighten.co/docs/installation/)
-* [Tailwind CSS](https://tailwindcss.com/docs/installation/)
-* [Tiki](https://doc.tiki.org/All-the-Documentation)
-* ~~[Stripe](https://stripe.com/docs)~~ — [DECEASED](https://github.com/godbout/dash-docset-builder/tree/stripe/storage/stripe)
-* ~~[Stripe API](https://stripe.com/docs/api)~~ — [DECEASED](https://github.com/godbout/dash-docset-builder/tree/stripe-api/storage/stripe-api)
-* [Ploi API](https://developers.ploi.io/)
-* [Bulma](https://https://bulma.io/)
-* [Alfred 4](https://www.alfredapp.com/)
+the number of Docsets is increasing and running the tests for all is now slow and dumb. so they all have their own cocoon now:
+
+
+* [Laravel-Zero](https://github.com/godbout/laravel-zero-dash-docset)
+* [Jigsaw by Tighten](https://github.com/godbout/jigsaw-dash-docset)
+* [Tailwind CSS](https://github.com/godbout/tailwindcss-dash-docset)
+* [Tiki](https://github.com/godbout/tiki-dash-docset)
+* ~~[Stripe](*https://github.com/godbout/dash-docset-builder/tree/stripe/storage/stripe)~~ — **DECEASED**
+* ~~[Stripe API](https://github.com/godbout/dash-docset-builder/tree/stripe-api/storage/stripe-api)~~ — **DECEASED**
+* [Ploi API](https://github.com/godbout/ploi-api-dash-docset)
+* [Bulma](https://github.com/godbout/bulma-dash-docset)
+* [Alfred 4](https://github.com/godbout/alfred-dash-docset)
