@@ -12,18 +12,12 @@
 
 ___
 
-## Docsets are all grown-ups now and they moved out!
+:warning::warning::warning::warning::warning:
 
-the number of Docsets is increasing and running the tests for all is now slow and dumb. so they all have their own cocoon now:
+>  # DOCSETS ARE ALL GROWN-UPS NOW AND THEY MOVED OUT!
 
+:warning::warning::warning::warning::warning:
 
-* [Laravel-Zero](https://github.com/godbout/laravel-zero-dash-docset)
-* [Jigsaw by Tighten](https://github.com/godbout/jigsaw-dash-docset)
-* [Tailwind CSS](https://github.com/godbout/tailwindcss-dash-docset)
-* [Tiki](https://github.com/godbout/tiki-dash-docset)
-* ~~[Stripe](https://github.com/godbout/dash-docset-builder/tree/stripe/storage/stripe)~~ — **DECEASED**
-* ~~[Stripe API](https://github.com/godbout/dash-docset-builder/tree/stripe-api/storage/stripe-api)~~ — **DECEASED**
-* [Ploi API](https://github.com/godbout/ploi-api-dash-docset)
-* [Bulma](https://github.com/godbout/bulma-dash-docset)
-* [Alfred 4](https://github.com/godbout/alfred-dash-docset)
-* [Chart.js](https://github.com/godbout/chartjs-dash-docset)
+the number of Docsets is increasing and running the tests for all is now slow and dumb. so they all have their own cocoon now. all informatiion available on the Dash Docset Builder repo here: https://github.com/godbout/dash-docset-builder#docsets-generated-with-this-builder
+
+good luck young beast.
